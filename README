@@ -1,0 +1,4 @@
+#Clone from github
+git clone git@github.com:yashigani/dotfiles.git
+
+./init.sh
