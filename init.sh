@@ -1,4 +1,5 @@
 #!/bin/sh
-ln -s .zshrc ~/.zshrc
-ln -s .vimrc ~/.vimrc
-ln -s .vim ~/.vim
+ln -siv .gitignore ~/.gitignore
+ln -siv .zshrc ~/.zshrc
+ln -siv .vimrc ~/.vimrc
+ln -siv .vim ~/.vim
