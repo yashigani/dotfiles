@@ -1,0 +1,75 @@
+snippet     Imp
+abbr        import "hoge.h"
+    #import "${1}.h"
+
+snippet loc
+    NSLocalizedString(@"${1}", ${2:nil})
+
+snippet log
+    NSLog(@"%s, ", __PRETTY_FUNCTION__);
+
+snippet array
+    NSMutableArray *${1:a} = [NSMutableArray array];
+
+snippet dict
+    NSMutableDictionary *${1:d} = [NSMutableDictionary dictionary];
+
+snippet rel
+    [${1} release]; $1 = nil;
+
+snippet in
+    - (id)init
+    {
+        self = [super ${1:init}];
+        if (self) {${0}
+        }
+        return self;
+    }
+
+snippet ini
+    self = [super init${1}];
+    if (self) {${0}
+    }
+    return self;
+
+snippet dea
+    - (void)dealloc
+    {
+        ${1}
+        [super dealloc];
+    }
+
+snippet cl
+    @interface ${1} : ${2:NSObject}
+    {
+    }
+
+    @end
+
+    @implementation $1
+    - (void)dealloc
+    {
+        [super dealloc];
+    }
+    @end
+
+snippet cli
+    @interface ${1} : ${2}
+    {
+    }
+
+    @end
+
+snippet clm
+    @implementation ${1}
+    @end
+
+snippet cati
+    @interface ${1} (${2})
+    @end
+
+snippet pro
+    @property (nonatomic, ${1:retain}) ${2} ${3};
+
+snippet syn
+    @synthesize ${1};

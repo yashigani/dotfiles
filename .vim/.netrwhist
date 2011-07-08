@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/taiki/working/iOS/gnavi/chottogu_test/Settings.bundle'
+let g:netrw_dirhist_2='/Users/taiki/working/android/weathernews_for_android/merged/src'
+let g:netrw_dirhist_3='/Users/taiki/working/iOS/GATest/Classes'
+let g:netrw_dirhist_4='/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/CFNetwork.framework'
+let g:netrw_dirhist_5='/Users/taiki/working/iOS/mixi/trunk/Libraries'
+let g:netrw_dirhist_6='/Users/taiki/dev_tools/Android-2.2_r1.1/frameworks/base/core/java/android'
