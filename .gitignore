@@ -2,4 +2,4 @@
 .svn
 *.pbxuser
 *.perspectivev3
-build
+build/

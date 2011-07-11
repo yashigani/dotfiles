@@ -4,7 +4,7 @@
 [core]
     pager = lv -c
     editor = vim
-    excludesfile = ~/.gitignore
+	excludesfile = /Users/taiki/.gitignore
     autocrlf = input
 [color]
     ui = auto
