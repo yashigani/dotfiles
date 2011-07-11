@@ -1,2 +1,0 @@
-Align.vba: call delete('/Users/taiki/.vim/plugin/AlignPlugin.vim')|call delete('/Users/taiki/.vim/plugin/AlignMapsPlugin.vim')|call delete('/Users/taiki/.vim/plugin/cecutil.vim')|call delete('/Users/taiki/.vim/doc/Align.txt')|call delete('/Users/taiki/.vim/autoload/Align.vim')|call delete('/Users/taiki/.vim/autoload/AlignMaps.vim')
-refe.vba: call delete('/Users/taiki/.vim/plugin/refe.vim')|call delete('/Users/taiki/.vim/doc/refe.txt')
