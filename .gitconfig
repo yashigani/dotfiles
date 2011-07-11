@@ -1,0 +1,10 @@
+[user]
+    name = yashigani
+    email = tai.fukui@gmail.com
+[core]
+    pager = lv -c
+    editor = vim
+    excludesfile = ~/.gitignore
+    autocrlf = input
+[color]
+    ui = auto
