@@ -131,6 +131,8 @@ noremap <Space> i<Space><Esc>
 "" escの2回押しでハイライト消去
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
+nmap <C-l> :<C-u>checktime<CR>
+
 "" 最後に変更されたテキストを選択
 nnoremap gc `[v`]
 vnoremap gc :<C-u>normal gc<enter>
