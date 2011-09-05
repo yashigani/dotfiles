@@ -78,6 +78,9 @@ augroup end
 " 強調はアンダーラインを消してハイライトに
 highlight cursorline cterm=none ctermbg=lightblue
 
+" カラースキーマの設定
+:colorscheme molokai
+
 " コマンド実行中は再描画しない
 set lazyredraw
 " エンコーディング設定
