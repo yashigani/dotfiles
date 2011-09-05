@@ -4,7 +4,17 @@
 [core]
     pager = lv -c
     editor = vim
-	excludesfile = /Users/taiki/.gitignore
+    excludesfile = /Users/taiki/.gitignore
     autocrlf = input
+	quotepath = false
 [color]
     ui = auto
+[alias]
+    st = status
+    br = branch
+    co = checkout
+    cb = checkout -b
+    cm = commit
+    ca = commit -a
+    srb = svn rebase
+    scm = svn dcommit
