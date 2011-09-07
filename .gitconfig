@@ -11,10 +11,13 @@
     ui = auto
 [alias]
     st = status
+    sh = show
     br = branch
     co = checkout
     cb = checkout -b
     cm = commit
     ca = commit -a
+    gr = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
+# for git-svn
     srb = svn rebase
     scm = svn dcommit
