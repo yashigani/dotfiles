@@ -48,27 +48,42 @@ export MANPATH=/opt/local/man:$MANPATH
 LC_TIME=C;export LC_TIME
 LC_MESSAGES=C;export LC_MESSAGES
 
+# pager を lv に
+if type lv > /dev/null 2>&1;then
+    export PAGER="lv"
+else
+    export PAGER="less"
+fi
+# lv をいいかんじに
+if [ "$PAGER" = "lv" ]; then
+    export LV="-c -l"
+else
+    alias lv="$PAGER"
+fi
+
 autoload -U compinit
 compinit
 autoload -U colors
 colors
 autoload zed
 
-#補完候補をEmacsのキーバインドで動き回る
+# 補完候補を Emacs のキーバインドで動き回る
 zstyle ':completion:*:default' menu select=1
 
-#補完の時に大文字小文字を区別しない
+# 補完の時に大文字小文字を区別しない
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
-#補完候補一覧をカラー表示する
+# 補完候補一覧をカラー表示する
 zstyle ':completion:*' list-colors ''
 
 ### History
 HISTFILE=$HOME/.zsh-history
 HISTSIZE=100000
 SAVEHIST=100000
-#同じコマンドは記録しない
+# 同じコマンドは記録しない
 setopt hist_ignore_dups
+# スペース始まりのコマンドはエスケープ
+setopt hist_ignore_space
 setopt share_history
 
 export LANG=ja_JP.UTF-8
@@ -78,56 +93,56 @@ setopt prompt_subst
 PROMPT=$'%{$fg[yellow]%}[%~]%{$reset_color%} : %{$fg[green]%}[%T %W]%{$reset_color%}\n> '
 #RPROMPT='%{$fg[green]%}Happy hacking!%{$reset_color%}'
 
-#ビープ音をキャンセル
+# ビープ音をキャンセル
 setopt nobeep
 
-#彩色
+# 彩色
 #setopt prompt_subst
 
 export CLICOLOR='true'
 export LSCOLORS=GxFxCxdxBxegedabagacad
 alias ls='ls -G'
 
-#補完候補を一覧表示
+# 補完候補を一覧表示
 setopt auto_list
 
-#補完候補一覧でファイルの種別をマーク表示
+# 補完候補一覧でファイルの種別をマーク表示
 setopt list_types
 
-#TABで補完候補を切り替える
+# TABで補完候補を切り替える
 setopt auto_menu
 
-#出力時に8bitを通す
+# 出力時に 8bit を通す
 setopt print_eight_bit
 
-#ディレクトリ名だけでcd
+# ディレクトリ名だけで cd
 setopt auto_cd
-#cdと同時にpush
+# cd と同時に push
 setopt auto_pushd
 
-#カッコを自動で補完
+# カッコを自動で補完
 setopt auto_param_keys
 
-#ディレクトリ名の補完で末尾の / を自動付加
+# ディレクトリ名の補完で末尾の / を自動付加
 setopt auto_param_slash
 
-#スペルチェック
+# スペルチェック
 setopt correct
 
-#補完候補を詰めて表示
+# 補完候補を詰めて表示
 setopt list_packed
 
-#補完の表示を水平方向に
+# 補完の表示を水平方向に
 setopt list_rows_first
 
-#拡張ファイルグロブ
+# 拡張ファイルグロブ
 setopt extended_glob
 
-#ファイル名の展開で数値順にソート
+# ファイル名の展開で数値順にソート
 setopt numeric_glob_sort
 
-#^S,^Qを無効に
+# ^S,^Qを無効に
 unsetopt flow_control
 
-#^Dでログアウトしない
+# ^Dでログアウトしない
 setopt ignore_eof
