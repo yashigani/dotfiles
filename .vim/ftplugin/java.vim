@@ -2,12 +2,6 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 
-" yashigani keymappings
-noremap <C-l> <C-u>:ListMethods<CR>
-noremap y] ya]
-noremap d] da]
-noremap d) da)
-
 " ( で今いるブロックを確認
 " http://subtech.g.hatena.ne.jp/motemen/20110817/1313577108
 nnoremap <buffer> <silent> ( :<C-U>call PreviewOpenBrace()<CR>
