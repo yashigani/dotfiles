@@ -113,11 +113,16 @@ set hid
 nnoremap j gj
 nnoremap k gk
 
+"" ; と : を入れ替え
+nnoremap ; :
+nnoremap : ;
+vnoremap ; :
+vnoremap : ;
+
 "" for tab
 "nnoremap to :<C-u>tabnew<CR>
 "nnoremap tn :<C-u>tabNext<CR>
 "nnoremap tc :<C-u>tabclose<CR>
-
 
 "" <C-h> で help をひく
 nnoremap <C-h> :<C-u>help<space>
