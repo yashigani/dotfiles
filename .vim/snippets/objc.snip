@@ -6,7 +6,7 @@ snippet loc
     NSLocalizedString(@"${1}", ${2:nil})
 
 snippet log
-    NSLog(@"%s, ", __PRETTY_FUNCTION__);
+    NSLog(@"%s, %@", __PRETTY_FUNCTION__, ${1:@""});
 
 snippet array
     NSMutableArray *${1:a} = [NSMutableArray array];
@@ -66,6 +66,10 @@ snippet clm
 
 snippet cati
     @interface ${1} (${2})
+    @end
+
+snippet catm
+    @implementation ${1} (${2})
     @end
 
 snippet pro
