@@ -1,12 +1,41 @@
-snippet root
-    <?xml version="1.0" encoding="utf-8"?>
-
 snippet an
     xmlns:a="http://schemas.android.com/apk/res/android"
+
+snippet ll
+    <LinearLayout
+        ${0}
+        a:orientation="${1:vertical}"
+        >
+    </LinearLayout>
+
+snippet rl
+    <RelativeLayout
+        ${0}
+        >
+    </RelativeLayout>
 
 snippet fr
     a:layout_height="${1:wrap_content}"
     a:layout_width="${2:wrap_content}"
 
-snippet id
+snippet aid
     a:id="@+id/${1}"
+
+snippet id
+    "@id/${1}"
+
+snippet el
+    <${1}
+        />
+
+snippet string
+    <string name="${1}">${2}</string>
+
+snippet sel
+    <selector
+        ${1:an}
+        >
+    </selector>
+
+snippet draw
+    "@drawable/${1}"
