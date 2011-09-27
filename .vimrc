@@ -137,9 +137,9 @@ noremap <CR> a<CR><Esc>
 noremap <Space> i<Space><Esc>
 
 "" escの2回押しでハイライト消去
-nmap <Esc><Esc> :nohlsearch<CR><Esc>
+noremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
 
-nmap <C-l> :<C-u>checktime<CR>
+noremap <C-c> :<C-u>checktime<CR>
 
 "" 最後に変更されたテキストを選択
 nnoremap gc `[v`]
@@ -178,6 +178,12 @@ inoremap <C-]> <C-[>
 set laststatus=2
 " ステータスラインに文字コードと改行文字を表示する
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%y%=%l,%c%V%8P
+
+" template
+augroup templates
+    autocmd!
+    autocmd BufNewFile *.xml 0r $HOME/dotfiles/.vim/template/template.xml
+augroup END
 
 " plugins
 "" surround
@@ -244,9 +250,9 @@ command! Tm :TMiniBufExplorer
 "" Unite
 nnoremap ,u :<C-u>Unite<Space>
 nnoremap ,ud :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> ss :<C-u>Unite -buffer-name=files file_rec file file_mru<CR>
 nnoremap <C-o> :<C-u>Unite file_rec<CR>
 nnoremap <C-n> :<C-u>Unite buffer<CR>
-nnoremap <C-p> :<C-u>Unite file_mru<CR>
 
 """ ウィンドウを縦に分割して開く
 au FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('vsplit')
