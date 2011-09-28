@@ -7,10 +7,14 @@ Bundle 'unite.vim'
 Bundle 'neocomplcache'
 Bundle 'surround.vim'
 Bundle 'cocoa.vim'
-Bundle 'minibufexpl.vim'
+"Bundle 'minibufexpl.vim'
 Bundle 'Align'
 Bundle 'quickrun'
 Bundle 'ref.vim'
+Bundle 'JSON.vim'
+Bundle 'IndentAnything'
+Bundle 'Javascript-Indentation'
+Bundle 'smartchr'
 
 filetype plugin indent on
 
@@ -88,6 +92,9 @@ set enc=utf-8
 set fenc=utf-8
 set fencs=iso-2022-jp,enc-jp,cp932
 set ffs=unix,dos,mac
+
+" .json のファイルは json に filetype を設定
+au! BufRead,BufNewFile *.json set filetype=json
 
 " <C-e> で :e ++enc=utf-8
 nnoremap <C-e> :<C-u>e ++enc=utf-8<CR>
@@ -262,29 +269,9 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-j> unite#do_action('vspli
 "au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
 "au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 
-""" smartchr
-"""" 演算子の間に空白を入れる
-"inoremap <buffer><expr> < search('^#include\%#', 'bcn')? ' <': smartchr#one_of(' < ', ' << ', '<')
-"inoremap <buffer><expr> > search('^#include <.*\%#', 'bcn')? '>': smartchr#one_of(' > ', ' >> ', '>')
-"inoremap <buffer><expr> + smartchr#one_of(' + ', '++', '+')
-"inoremap <buffer><expr> - smartchr#one_of(' - ', '--', '-')
-"inoremap <buffer><expr> / smartchr#one_of(' / ', '// ', '/', ' / ')
-"""" * はポインタで使うので、空白はいれない
-"inoremap <buffer><expr> & smartchr#one_of(' & ', ' && ', '&')
-"inoremap <buffer><expr> % smartchr#one_of(' % ', '%')
-"inoremap <buffer><expr> <bar> smartchr#one_of(' <bar> ', ' <bar><bar> ', '<bar>')
-"inoremap <buffer><expr> , smartchr#one_of(', ', ',', ', ')
-"""" 3項演算子の場合は、後ろのみ空白を入れる
-"" inoremap <buffer><expr> ? smartchr#one_of('? ', '?')
-"" inoremap <buffer><expr> : smartchr#one_of(': ', '::', ':')
-"
-"""" = の場合、単純な代入や比較演算子として入力する場合は前後にスペースをいれる。
-"""" 複合演算代入としての入力の場合は、直前のスペースを削除して=を入力
-"inoremap <buffer><expr> = search('\(&\<bar><bar>\<bar>+\<bar>-\<bar>/\<bar>>\<bar><\) \%#', 'bcn')? '<bs>= '
-"        \ : search('\(*\<bar>!\)\%#', 'bcn') ? '= '
-"        \ : smartchr#one_of(' = ', ' == ', '=', ' = ')
-
-
+"" smartchr
+inoremap <expr> = smartchr#loop(' = ', ' == ', '=', '==')
+inoremap <expr> , smartchr#loop(', ', ',')
 
 " 文字コードの自動認識 from ずんwiki
 " http://www.kawaz.jp/pukiwiki/?vim#b5ffaff5
