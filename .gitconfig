@@ -13,14 +13,24 @@
     st = status
     sh = show
     br = branch
+    ft = fetch
+    ad = add
     co = checkout
     cb = checkout -b
+
     cm = commit
     ca = commit -a
+
+# log
     gr = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
+    ls = log --stat  # 変更されたファイルも表示
+    lp = log -p      # diff も表示
+
 # for git-svn
     srb = svn rebase
     scm = svn dcommit
+    sft = svn fetch
+
 # diff
     dm = diff master           # masterとのdiff
     dw = diff --color-words    # 単語単位でいろつけてdiff
@@ -32,6 +42,7 @@
     d4 = diff HEAD~~~~         # HEADから4つ前とdiff
     d5 = diff HEAD~~~~~        # HEADから5つ前とdiff
     d10 = diff HEAD~~~~~~~~~~  # HEADから10前とdiff
+
 # mergeの際にconflictが起きたファイルを編集
     edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
 # mergeの際にconflictが起きたファイルをadd
