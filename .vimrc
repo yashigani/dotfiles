@@ -5,6 +5,7 @@ call vundle#rc()
 
 Bundle 'unite.vim'
 Bundle 'neocomplcache'
+Bundle 'http://github.com/Shougo/vimproc'
 Bundle 'surround.vim'
 Bundle 'cocoa.vim'
 "Bundle 'minibufexpl.vim'
@@ -258,12 +259,15 @@ command! Tm :TMiniBufExplorer
 nnoremap ,u :<C-u>Unite<Space>
 nnoremap ,ud :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> ss :<C-u>Unite -buffer-name=files file_rec file file_mru<CR>
-nnoremap <C-o> :<C-u>Unite file_rec<CR>
+nnoremap <silent> sg :<C-u>Unite grep -no-quite<CR>
 nnoremap <C-n> :<C-u>Unite buffer<CR>
 
 """ ウィンドウを縦に分割して開く
 au FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('vsplit')
 au FileType unite inoremap <silent> <buffer> <expr> <C-j> unite#do_action('vsplit')
+
+""" file_rec の ignore ファイル
+let g:unite_source_file_rec_ignore_pattern = '\%(^\|/\)\.$\|\~$\|\.\%(o\|exe\|dll\|bak\|sw[po]\|class\)$\|\%(^\|/\)\.\%(hg\|git\|bzr\|svn\)\%($\|/\)'
 
 """ ESCキーを2回押すと終了する
 "au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
