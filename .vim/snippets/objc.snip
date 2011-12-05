@@ -77,3 +77,17 @@ snippet pro
 
 snippet syn
     @synthesize ${1};
+
+snippet blockparam
+snippet bp
+    ${1:Return_type}(^)(${3:param types})${2:name}
+
+snippet inblock
+snippet ib
+    ${1:Return_type}(^${2:name})(${3:param types}) = ^(${4:params}) {
+        ${0}
+    }
+
+snippet defblock
+snippet db
+    typedef ${1:return type}(^${2:name})(${3:arguments});
