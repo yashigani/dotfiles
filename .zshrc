@@ -16,13 +16,14 @@ export DEV_TOOLS=/Users/taiki/dev_tools
 export ANDROID_SDK_HOME=$DEV_TOOLS/android
 export PATH=$ANDROID_SDK_HOME/tools:$ANDROID_SDK_HOME/platform-tools:$PATH
 
-# iPhone Simulator Directory
+# go to iPhone Simulator Directory
 alias simulator='cd ~/Library/Application\ Support/iPhone\ Simulator'
 
 ## MacVim-Kaoriya を Terminal から使う
 export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 alias vi='env Lang=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 alias vim='env Lang=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+alias ctags='/Applications/MacVim.app/Contents/MacOS/ctags "$@"'
 
 # Load RVM function
 if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then source $HOME/.rvm/scripts/rvm ; fi
