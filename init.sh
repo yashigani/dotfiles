@@ -1,6 +1,6 @@
 #!/bin/sh
-ln -siv .gitconfig ~/.gitconfig
-ln -siv .gitignore ~/.gitignore
-ln -siv .zshrc ~/.zshrc
-ln -siv .vimrc ~/.vimrc
-ln -siv .vim ~/.vim
+ln -siv ~/dotfiles/.gitconfig ~/.gitconfig
+ln -siv ~/dotfiles/.gitignore ~/.gitignore
+ln -siv ~/dotfiles/.zshrc ~/.zshrc
+ln -siv ~/dotfiles/.vimrc ~/.vimrc
+ln -siv ~/dotfiles/.vim ~/.vim
