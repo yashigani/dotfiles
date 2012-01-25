@@ -16,6 +16,8 @@ Bundle 'JSON.vim'
 Bundle 'IndentAnything'
 Bundle 'Javascript-Indentation'
 Bundle 'smartchr'
+"Bundle 'https://github.com/tyru/eskk.vim.git'
+Bundle 'https://github.com/mattn/hahhah-vim.git'
 
 filetype plugin indent on
 
@@ -120,6 +122,11 @@ set hid
 "" j,kを物理的移動に
 nnoremap j gj
 nnoremap k gk
+"" 0, $を物理的に
+nnoremap 0 g0
+nnoremap g0 0
+nnoremap $ g$
+nnoremap g$ $
 
 "" ; と : を入れ替え
 nnoremap ; :
@@ -180,12 +187,13 @@ inoremap <C-e> <end>
 
 " jis キーボード環境でインサートモード時の誤爆を防ぐ
 inoremap <C-@> <C-[>
-inoremap <C-]> <C-[>
+"inoremap <C-]> <C-[>
 
 " ステータスラインを常に表示する
 set laststatus=2
 " ステータスラインに文字コードと改行文字を表示する
-set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%y%=%l,%c%V%8P
+"set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%y%=%l,%c%V%8P
+set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%y%=%l,%c%V%8P%30{g:HahHah()}
 
 " template
 augroup templates
@@ -194,10 +202,30 @@ augroup templates
 augroup END
 
 " plugins
+""" eskk.vim
+"if has('vim_starting')
+"    let g:eskk_dictionary = '~/.skk-jisyo'
+"
+"    if has('mac')
+"        let g:eskk_large_dictionary = "~/Library/Application\ Support/AquaSKK/SKK-JISYO.L"
+"    elseif has('win32') || has('win64')
+"        let g:eskk_large_dictionary = "~/SKK_JISYO.L"
+"    else
+"    endif
+"endif
+"
+"let g:eskk_debug = 0
+"let g:eskk_egg_like_newline = 1
+"let g:eskk_revert_henkan_style = "okuri"
+"let g:eskk_enable_completion = 0
+
 "" surround
 nmap s <Plug>Ysurround
 nmap ss <Plug>Yssurround
 
+"" quickrun
+let g:quickrun_config = {}
+let g:quickrun_config['*']  =  {'split': 'rightbelow'}
 
 """ grepbuffer
 "command! -nargs=1 Gb :GrepBuffer <args>
@@ -274,7 +302,7 @@ let g:unite_source_file_rec_ignore_pattern = '\%(^\|/\)\.$\|\~$\|\.\%(o\|exe\|dl
 "au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 
 "" smartchr
-inoremap <expr> = smartchr#loop(' = ', ' == ', '=', '==')
+inoremap <expr> = smartchr#loop(' = ', ' == ', '=')
 inoremap <expr> , smartchr#loop(', ', ',')
 
 " 文字コードの自動認識 from ずんwiki
