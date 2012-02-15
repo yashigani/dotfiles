@@ -32,6 +32,7 @@
     sft = svn fetch
 
 # diff
+    di = diff
     dm = diff master           # masterとのdiff
     dw = diff --color-words    # 単語単位でいろつけてdiff
     dc = diff --cached         # addされているものとのdiff
