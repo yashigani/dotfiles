@@ -3,28 +3,29 @@ snippet im
 
 snippet onc
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ${1}
+        setCotentView(${1});
+        ${0}
     }
 
 snippet ond
     @Override
-    public void onDestroy() {
+    protected void onDestroy() {
         super.onDestroy();
         ${1}
     }
 
 snippet onr
     @Override
-    public void onResume() {
+    protected void onResume() {
         super.onResume();
         ${1}
     }
 
 snippet onp
     @Override
-    public void onPause() {
+    protected void onPause() {
         super.onPause();
         ${1}
     }

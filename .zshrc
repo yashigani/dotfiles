@@ -6,7 +6,7 @@ bindkey '^N' history-beginning-search-forward
 alias sgi="sgi64"
 
 # javacのエンコーディング設定をエイリアスに
-alias javac="javac -J-Dfile.encoding=UTF8"
+#alias javac="javac -J-Dfile.encoding=UTF8"
 # keytoolとかが文字化けするからUTF-8に
 export _JAVA_OPTIONS='-Dfile.encoding=UTF-8'
 

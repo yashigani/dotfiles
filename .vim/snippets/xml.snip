@@ -1,41 +1,121 @@
-snippet an
-    xmlns:a="http://schemas.android.com/apk/res/android"
+# android
+snippet android
+    xmlns:android="http://schemas.android.com/apk/res/android"${0}
 
+snippet an
+    android:${1}=${0}
+
+snippet el
+    <${1}
+        />
+
+# layout
+
+snippet aid
+    android:id="@+id/${1}"${0}
+
+snippet id
+    "@id/${1}"${0}
+
+snippet st
+    "@string/${1}"${0}
+
+snippet dr
+    "@drawable/${1}"${0}
+
+snippet lb
+    android:layout_${1}
+
+## for LinearLayout
 snippet ll
     <LinearLayout
         ${0}
-        a:orientation="${1:vertical}"
+        android:orientation="${1:vertical}"
         >
     </LinearLayout>
 
+## for RelativeLayout
 snippet rl
     <RelativeLayout
         ${0}
         >
     </RelativeLayout>
 
+snippet rlb
+    android:layout_below="@id/${1}"${0}
+
+snippet rla
+    android:layout_above="@id/${1}"${0}
+
+snippet rlt
+    ="true"${1}
+
 snippet fr
-    a:layout_height="${1:wrap_content}"
-    a:layout_width="$1"
+    android:layout_height="${1:wrap_content}"
+    android:layout_width="$1"${0}
 
-snippet aid
-    a:id="@+id/${1}"
+snippet ma
+    android:margin="${1}"${0}
 
-snippet id
-    "@id/${1}"
+snippet mat
+    android:marginTop="${1}"${0}
 
-snippet el
-    <${1}
+snippet mar
+    android:marginRight="${1}"${0}
+
+snippet mal
+    android:marginLeft="${1}"${0}
+
+snippet mab
+    android:marginBottom="${1}"${0}
+
+## for TextView
+snippet te
+    <TextView
+        ${0}
+        android:textColor="${1}"
+        android:textStyle="${2}"
+        android:textSize="${3}"
+        android:text="${4}"
         />
 
+# for values
 snippet string
-    <string name="${1}">${2}</string>
+    <string name="${1}">${2}</string>${0}
 
+snippet color
+    <color name="${1}">${2}</color>${0}
+
+# for drawable resources
 snippet sel
     <selector
-        ${1:an}
+        ${1:android}
         >
+        ${0}
     </selector>
 
-snippet draw
-    "@drawable/${1}"
+snippet shape
+    <shape
+        ${1:android}
+        android:shape="${2:rectangle}"
+        >
+        ${0}
+    </shape>
+
+snippet grad
+    <gradient
+        android:angle="${1:270}"
+        android:startColor="#${2}"
+        android:endColor="#${3}"
+        />${0}
+
+snippet stroke
+    <stroke
+        android:width="${1}"
+        android:color="#${2}"
+        />${0}
+
+snippet corners
+    <corners
+        android:radius="${1}"
+        />${0}
