@@ -295,7 +295,7 @@ au FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('vspli
 au FileType unite inoremap <silent> <buffer> <expr> <C-j> unite#do_action('vsplit')
 
 """ file_rec の ignore ファイル
-let g:unite_source_file_rec_ignore_pattern = '\%(^\|/\)\.$\|\~$\|\.\%(o\|exe\|dll\|bak\|sw[po]\|class\)$\|\%(^\|/\)\.\%(hg\|git\|bzr\|svn\)\%($\|/\)\|\%(^\|/\)\%(Build\|gen\)\%($\|/\)'
+let g:unite_source_file_rec_ignore_pattern = '\%(^\|/\)\.$\|\~$\|\.\%(o\|exe\|dll\|bak\|sw[po]\|class\|png\|jpg\|xib\)$\|\%(^\|/\)\.\%(hg\|git\|bzr\|svn\)\%($\|/\)\|\%(^\|/\)\%(Build\|gen\|bin\|proguard\)\%($\|/\)\|\%(^\|/\).\+\.\%(xcodeproj\)\%($\|/\)'
 
 """ ESCキーを2回押すと終了する
 "au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
