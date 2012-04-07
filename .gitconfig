@@ -21,6 +21,10 @@
     cm = commit
     ca = commit -a
 
+    mcm = merge --no-ff --no-commit
+
+    reset-top = reset --hard HEAD~
+
 # log
     gr = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
     ls = log --stat  # 変更されたファイルも表示
