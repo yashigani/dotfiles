@@ -6,7 +6,7 @@ snippet loc
     NSLocalizedString(@"${1}", ${2:nil})
 
 snippet log
-    NSLog(@"%s, %@", __PRETTY_FUNCTION__, ${1:@""});
+    NSLog(@"%s, ${2}%@", __PRETTY_FUNCTION__, ${1:@""});${0}
 
 snippet array
     NSMutableArray *${1:a} = [NSMutableArray array];
@@ -72,11 +72,23 @@ snippet catm
     @implementation ${1} (${2})
     @end
 
+snippet     cle
+abbr        class extensions
+    @interface ${1} ()
+    @end
+
+snippet cat
+    @interface ${1} (${2})
+    @end
+
+    @implementation $1 ($2)
+    @end
+
 snippet pro
     @property (${1:retain}, nonatomic) ${2} ${3};
 
 snippet syn
-    @synthesize ${1};
+    @synthesize ${1} = $1_;
 
 snippet blockparam
 snippet bp
