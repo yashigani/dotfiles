@@ -51,7 +51,7 @@ command! Ev edit $MYVIMRC
 command! Rv source $MYVIMRC
 
 " 保存時に行末の空白を除去する
-autocmd bufwritepre * :%s/\s\+$//ge
+"autocmd bufwritepre * :%s/\s\+$//ge
 "" 保存時にtabをスペースに変換する
 "autocmd bufwritepre * :%s/\t/  /ge
 
@@ -299,7 +299,7 @@ au FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('vspli
 au FileType unite inoremap <silent> <buffer> <expr> <C-j> unite#do_action('vsplit')
 
 """ file_rec の ignore ファイル
-let g:unite_source_file_rec_ignore_pattern = '\%(^\|/\)\.$\|\~$\|\.\%(DS_Store\|o\|exe\|dll\|bak\|sw[po]\|class\|png\|jpg\|xib\)$\|\%(^\|/\)\.\%(hg\|git\|bzr\|svn\)\%($\|/\)\|\%(^\|/\)\%(Build\|gen\|bin\|proguard\)\%($\|/\)\|\%(^\|/\).\+\.\%(xcodeproj\)\%($\|/\)'
+let g:unite_source_file_rec_ignore_pattern = '\%(^\|/\)\.$\|\~$\|\.\%(DS_Store\|o\|exe\|dll\|bak\|sw[po]\|class\|png\|jpg\|xib\)$\|\%(^\|/\)\.\%(hg\|git\|bzr\|svn\)\%($\|/\)\|\%(^\|/\)\%(BuildArchive\|Build\|gen\|bin\|proguard\)\%($\|/\)\|\%(^\|/\).\+\.\%(xcodeproj\)\%($\|/\)'
 
 """ ESCキーを2回押すと終了する
 "au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q

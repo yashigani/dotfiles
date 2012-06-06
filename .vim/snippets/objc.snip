@@ -87,6 +87,9 @@ snippet cat
 snippet pro
     @property (${1:retain}, nonatomic) ${2} ${3};
 
+snippet mpro
+    @property (nonatomic, ${1:retain}) ${2:IBOutlet }${3} *${4};
+
 snippet syn
     @synthesize ${1} = $1_;
 
@@ -103,3 +106,15 @@ snippet ib
 snippet defblock
 snippet db
     typedef ${1:return type}(^${2:name})(${3:arguments});
+
+snippet disafter
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, ${1} * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^{
+                ${0}
+            });
+
+snippet disasync
+    dispatch_queue_t q = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(q, ^{
+                ${0}
+            });
