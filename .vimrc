@@ -22,6 +22,7 @@ Bundle 'smartchr'
 "Bundle 'https://github.com/mattn/hahhah-vim.git'
 Bundle 'https://github.com/koron/u-nya-vim.git'
 Bundle 'https://github.com/thinca/vim-qfreplace.git'
+Bundle 'https://github.com/nanotech/jellybeans.vim'
 
 filetype plugin indent on
 
@@ -34,7 +35,7 @@ filetype plugin indent on
 " タブの左側にカーソル表示
 "set listchars=tab:\ \
 set list
-set listchars=tab:>-,eol:-
+set listchars=tab:>>\,eol:$
 
 set textwidth=0                 " 一行に長い文章を書いていても自動折り返しをしない
 set nobackup                    " バックアップを取らない
@@ -89,7 +90,7 @@ augroup end
 highlight cursorline cterm=none ctermbg=lightblue
 
 " カラースキーマの設定
-:colorscheme molokai
+:colorscheme jellybeans
 
 " コマンド実行中は再描画しない
 set lazyredraw
@@ -274,17 +275,17 @@ smap <C-k> <Plug>(neocomplcache_snippets_expand)
 """ snippets dir
 let g:neocomplcache_snippets_dir = $HOME.'/.vim/snippets'
 
-"" miniBufExpl
-let g:miniBufExplMapWindowNavVim = 0
-let g:miniBufExplSplitBelow = 0
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
-let g:miniBufExplSplitToEdge = 1
-let g:miniBufExplMaxSize = 10
-
-""" :Tmでminibufexplorerの表示トグル
-command! Tm :TMiniBufExplorer
+""" miniBufExpl
+"let g:miniBufExplMapWindowNavVim = 0
+"let g:miniBufExplSplitBelow = 0
+"let g:miniBufExplMapWindowNavArrows = 1
+"let g:miniBufExplMapCTabSwitchBufs = 1
+"let g:miniBufExplModSelTarget = 1
+"let g:miniBufExplSplitToEdge = 1
+"let g:miniBufExplMaxSize = 10
+"
+"""" :Tmでminibufexplorerの表示トグル
+"command! Tm :TMiniBufExplorer
 
 
 "" Unite
