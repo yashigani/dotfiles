@@ -2,11 +2,23 @@ snippet     Imp
 abbr        import "hoge.h"
     #import "${1}.h"
 
+snippet sel
+    @selector(${1})
+
 snippet loc
     NSLocalizedString(@"${1}", ${2:nil})
 
+snippet locf
+    NSLocalizedString(@"${1}", @"$1")
+
 snippet log
-    NSLog(@"%s, ${2}%@", __PRETTY_FUNCTION__, ${1:@""});${0}
+    NSLog(@"%s, ${1}%@", __PRETTY_FUNCTION__, ${2:@""});${0}
+
+snippet flog
+    FRLog(@"%s, ${1}%@", __PRETTY_FUNCTION__, ${2:@""});${0}
+
+snippet aia
+    [[[${1} alloc] init${2}] autorelease];
 
 snippet array
     NSMutableArray *${1:a} = [NSMutableArray array];
@@ -15,7 +27,7 @@ snippet dict
     NSMutableDictionary *${1:d} = [NSMutableDictionary dictionary];
 
 snippet rel
-    [${1} release]; $1 = nil;
+    [${1} release];
 
 snippet in
     - (id)init
@@ -41,9 +53,6 @@ snippet dea
 
 snippet cl
     @interface ${1} : ${2:NSObject}
-    {
-    }
-
     @end
 
     @implementation $1
@@ -55,9 +64,6 @@ snippet cl
 
 snippet cli
     @interface ${1} : ${2}
-    {
-    }
-
     @end
 
 snippet clm
@@ -88,7 +94,7 @@ snippet pro
     @property (${1:retain}, nonatomic) ${2} ${3};
 
 snippet mpro
-    @property (nonatomic, ${1:retain}) ${2:IBOutlet }${3} *${4};
+    @property (nonatomic, ${1:retain}) ${2:IBOutlet } *${3};
 
 snippet syn
     @synthesize ${1} = $1_;
@@ -118,3 +124,19 @@ snippet disasync
     dispatch_async(q, ^{
                 ${0}
             });
+
+snippet kvoaddob
+abbr addObserver for kvo
+    [${1:obj} addObserver:${2:self}
+               forKeyPath:${3}
+                  options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionInitial
+                  context:NULL];
+
+snippet uin
+    [UIImage imageNamed:@"${1}"]
+
+snippet nin
+    [NSImage imageNamed:@"${1}"]
+
+snippet uic
+    [UIColor colorWithRed:${1}/255.0 green:${2}/255.0 blue:${3}/255.0 alpha:1.0]
