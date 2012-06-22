@@ -35,7 +35,7 @@ filetype plugin indent on
 " タブの左側にカーソル表示
 "set listchars=tab:\ \
 set list
-set listchars=tab:>>\,eol:$
+set listchars=tab:>-,eol:$
 
 set textwidth=0                 " 一行に長い文章を書いていても自動折り返しをしない
 set nobackup                    " バックアップを取らない
