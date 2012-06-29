@@ -8,6 +8,7 @@ Bundle 'https://github.com/Shougo/vimfiler.git'
 Bundle 'https://github.com/Shougo/neocomplcache'
 Bundle 'https://github.com/Shougo/neocomplcache-snippets-complete'
 Bundle 'http://github.com/Shougo/vimproc'
+Bundle 'https://github.com/tacroe/unite-mark.git'
 Bundle 'surround.vim'
 Bundle 'cocoa.vim'
 "Bundle 'minibufexpl.vim'
@@ -294,6 +295,7 @@ nnoremap ,ud :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> ss :<C-u>Unite -buffer-name=files file_rec:. file file_mru<CR>
 nnoremap <silent> sg :<C-u>Unite grep -no-quite<CR>
 nnoremap <C-n> :<C-u>Unite buffer<CR>
+nnoremap <silent> sm :<C-u>Unite mark<CR>
 
 """ ウィンドウを縦に分割して開く
 au FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('vsplit')
