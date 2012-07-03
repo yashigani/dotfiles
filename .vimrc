@@ -293,7 +293,7 @@ let g:neocomplcache_snippets_dir = $HOME.'/.vim/snippets'
 nnoremap ,u :<C-u>Unite<Space>
 nnoremap ,ud :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> ss :<C-u>Unite -buffer-name=files file_rec:. file file_mru<CR>
-nnoremap <silent> sg :<C-u>Unite grep -no-quite<CR>
+nnoremap <silent> sg :<C-u>Unite -no-quite grep:./:-iHRnr<CR>
 nnoremap <C-n> :<C-u>Unite buffer<CR>
 nnoremap <silent> sm :<C-u>Unite mark<CR>
 
