@@ -24,6 +24,7 @@ Bundle 'smartchr'
 Bundle 'https://github.com/koron/u-nya-vim.git'
 Bundle 'https://github.com/thinca/vim-qfreplace.git'
 Bundle 'https://github.com/nanotech/jellybeans.vim'
+Bundle 'https://github.com/Lokaltog/vim-powerline.git'
 
 filetype plugin indent on
 
@@ -225,6 +226,10 @@ augroup END
 "let g:eskk_revert_henkan_style = "okuri"
 "let g:eskk_enable_completion = 0
 
+"" vim-powerline
+"let g:Powerline_symbols = 'fancy'
+"set t_Co=256
+
 "" surround
 nmap s <Plug>Ysurround
 nmap ss <Plug>Yssurround
@@ -293,7 +298,7 @@ let g:neocomplcache_snippets_dir = $HOME.'/.vim/snippets'
 nnoremap ,u :<C-u>Unite<Space>
 nnoremap ,ud :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> ss :<C-u>Unite -buffer-name=files file_rec:. file file_mru<CR>
-nnoremap <silent> sg :<C-u>Unite -no-quite grep:./:-iHRnr<CR>
+nnoremap <silent> sg :<C-u>Unite -no-quite grep:./:<CR>
 nnoremap <C-n> :<C-u>Unite buffer<CR>
 nnoremap <silent> sm :<C-u>Unite mark<CR>
 
