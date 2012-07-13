@@ -94,7 +94,10 @@ snippet pro
     @property (${1:retain}, nonatomic) ${2} ${3};
 
 snippet mpro
-    @property (nonatomic, ${1:retain}) ${2:IBOutlet } *${3};
+    @property (nonatomic, ${1:retain}) ${2} *${3};
+
+snippet ibo
+    IBOutlet ${1}
 
 snippet syn
     @synthesize ${1} = $1_;
@@ -122,6 +125,12 @@ snippet disasync
     dispatch_async(q, ^{
                 ${0}
             });
+
+snippet disone
+    static dispatch_once_t o;
+    dispatch_once(&o, ^{
+        ${0}
+    });
 
 snippet kvoaddob
 abbr addObserver for kvo
