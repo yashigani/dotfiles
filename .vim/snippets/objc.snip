@@ -12,10 +12,13 @@ snippet locf
     NSLocalizedString(@"${1}", @"$1")
 
 snippet log
-    NSLog(@"%s, ${1}%@", __PRETTY_FUNCTION__, ${2:@""});${0}
+    NSLog(@"%s, ${1}%@", __PRETTY_FUNCTION__, ${2});${0}
 
 snippet flog
-    FRLog(@"%s, ${1}%@", __PRETTY_FUNCTION__, ${2:@""});${0}
+    FRLog(@"%s, ${1}%@", __PRETTY_FUNCTION__, ${2});${0}
+
+snippet st
+    @"${1}"${0}
 
 snippet aia
     [[[${1} alloc] init${2}] autorelease];
@@ -147,3 +150,8 @@ snippet nin
 
 snippet uic
     [UIColor colorWithRed:${1}/255.0 green:${2}/255.0 blue:${3}/255.0 alpha:1.0]
+
+snippet arrenu
+    [${1} enumerateObjectsUsingBlock:^(${2} *${3}, NSUInteger idx, BOOL *stop) {
+        ${0}
+    }];

@@ -104,6 +104,7 @@ set ffs=unix,dos,mac
 
 " .json のファイルは json に filetype を設定
 au! BufRead,BufNewFile *.json set filetype=json
+au! BufRead,BufNewFile *.h set filetype=objc
 
 " <C-e> で :e ++enc=utf-8
 nnoremap <C-e> :<C-u>e ++enc=utf-8<CR>
