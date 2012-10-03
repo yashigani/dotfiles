@@ -7,21 +7,21 @@ Bundle 'https://github.com/Shougo/unite.vim'
 Bundle 'https://github.com/Shougo/vimfiler.git'
 Bundle 'https://github.com/Shougo/neocomplcache'
 Bundle 'https://github.com/Shougo/neocomplcache-snippets-complete'
-Bundle 'http://github.com/Shougo/vimproc'
+Bundle 'https://github.com/Shougo/vimproc'
 Bundle 'https://github.com/tacroe/unite-mark.git'
 Bundle 'surround.vim'
 Bundle 'cocoa.vim'
 "Bundle 'minibufexpl.vim'
 Bundle 'Align'
 Bundle 'quickrun'
-Bundle 'ref.vim'
+Bundle 'https://github.com/thinca/vim-ref'
 Bundle 'JSON.vim'
 Bundle 'IndentAnything'
 Bundle 'Javascript-Indentation'
 Bundle 'smartchr'
 "Bundle 'https://github.com/tyru/eskk.vim.git'
 "Bundle 'https://github.com/mattn/hahhah-vim.git'
-Bundle 'https://github.com/koron/u-nya-vim.git'
+"Bundle 'https://github.com/koron/u-nya-vim.git'
 Bundle 'https://github.com/thinca/vim-qfreplace.git'
 Bundle 'https://github.com/nanotech/jellybeans.vim'
 Bundle 'https://github.com/Lokaltog/vim-powerline.git'
@@ -200,7 +200,7 @@ inoremap <C-@> <C-[>
 set laststatus=2
 " ステータスラインに文字コードと改行文字を表示する
 " set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%y%=%l,%c%V%8P
-set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%y%=%l,%c%V%8P%30{g:U_nya_()}
+" set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%y%=%l,%c%V%8P%30{g:U_nya_()}
 
 " template
 augroup templates

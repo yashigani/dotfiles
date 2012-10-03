@@ -1,3 +1,6 @@
+snippet imp
+    #import <${1}.h>
+
 snippet     Imp
 abbr        import "hoge.h"
     #import "${1}.h"
@@ -22,6 +25,9 @@ snippet st
 
 snippet aia
     [[[${1} alloc] init${2}] autorelease];
+
+snippet mstr
+    NSMutableString *{1:str}  =  [NSMutableString string];
 
 snippet array
     NSMutableArray *${1:a} = [NSMutableArray array];
@@ -49,9 +55,8 @@ snippet ini
 
 snippet dea
     - (void)dealloc
-    {
-        ${1}
-        [super dealloc];
+    {${1}
+    [super dealloc];
     }
 
 snippet cl
@@ -129,6 +134,11 @@ snippet disasync
                 ${0}
             });
 
+snippet dismain
+    dispatch_async(dispatch_get_main_queue(), ^{
+                ${0}
+            });
+
 snippet disone
     static dispatch_once_t o;
     dispatch_once(&o, ^{
@@ -141,6 +151,13 @@ abbr addObserver for kvo
                forKeyPath:${3}
                   options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionInitial
                   context:NULL];
+
+snippet kvoob
+abbr KVO observing
+    - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+    {
+        ${1}
+    }
 
 snippet uin
     [UIImage imageNamed:@"${1}"]
@@ -155,3 +172,6 @@ snippet arrenu
     [${1} enumerateObjectsUsingBlock:^(${2} *${3}, NSUInteger idx, BOOL *stop) {
         ${0}
     }];
+
+snippet pragma
+    #pragma mark ${0} -
