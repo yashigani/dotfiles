@@ -124,25 +124,21 @@ snippet db
 
 snippet disafter
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, ${1} * NSEC_PER_SEC);
-    dispatch_after(popTime, dispatch_get_main_queue(), ^{
-                ${0}
-            });
+    dispatch_after(popTime, dispatch_get_main_queue(), ^{${0}
+    });
 
 snippet disasync
     dispatch_queue_t q = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_async(q, ^{
-                ${0}
-            });
+    dispatch_async(q, ^{${0}
+    });
 
 snippet dismain
-    dispatch_async(dispatch_get_main_queue(), ^{
-                ${0}
-            });
+    dispatch_async(dispatch_get_main_queue(), ^{${0}
+    });
 
 snippet disone
     static dispatch_once_t o;
-    dispatch_once(&o, ^{
-        ${0}
+    dispatch_once(&o, ^{${0}
     });
 
 snippet kvoaddob
@@ -169,8 +165,7 @@ snippet uic
     [UIColor colorWithRed:${1}/255.0 green:${2}/255.0 blue:${3}/255.0 alpha:1.0]
 
 snippet arrenu
-    [${1} enumerateObjectsUsingBlock:^(${2} *${3}, NSUInteger idx, BOOL *stop) {
-        ${0}
+    [${1} enumerateObjectsUsingBlock:^(${2} *${3}, NSUInteger idx, BOOL *stop) {${0}
     }];
 
 snippet pragma
