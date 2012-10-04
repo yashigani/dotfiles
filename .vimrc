@@ -30,6 +30,7 @@ filetype plugin indent on
 
 set number
 set smartindent
+set smarttab
 set visualbell
 syntax enable
 filetype plugin indent on
@@ -175,14 +176,12 @@ nmap # #zz
 nmap * *zz
 
 "" insertモード時のマッピング
-inoremap <C-b> <left>
-inoremap <C-f> <right>
-" inoremap <c-n> <down>
-" inoremap <c-p> <up>
-inoremap <C-h> <bs>
-inoremap <C-d> <del>
-inoremap <C-a> <home>
-inoremap <C-e> <end>
+inoremap <C-b> <Left>
+inoremap <C-f> <Right>
+inoremap <C-h> <BS>
+inoremap <C-d> <Del>
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
 
 """ カッコを便利に
 "inoremap {} {}<left>
