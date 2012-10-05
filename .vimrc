@@ -1,30 +1,42 @@
-" for Vundle
+" for NeoBundle
+set nocompatible
 filetype off
-set rtp+=~/.vim/vundle.git
-call vundle#rc()
 
-Bundle 'https://github.com/Shougo/unite.vim'
-Bundle 'https://github.com/Shougo/vimfiler.git'
-Bundle 'https://github.com/Shougo/neocomplcache'
-Bundle 'https://github.com/Shougo/neocomplcache-snippets-complete'
-Bundle 'https://github.com/Shougo/vimproc'
-Bundle 'https://github.com/tacroe/unite-mark.git'
-Bundle 'surround.vim'
-Bundle 'cocoa.vim'
-"Bundle 'minibufexpl.vim'
-Bundle 'Align'
-Bundle 'quickrun'
-Bundle 'https://github.com/thinca/vim-ref'
-Bundle 'JSON.vim'
-Bundle 'IndentAnything'
-Bundle 'Javascript-Indentation'
-Bundle 'smartchr'
-"Bundle 'https://github.com/tyru/eskk.vim.git'
-"Bundle 'https://github.com/mattn/hahhah-vim.git'
-"Bundle 'https://github.com/koron/u-nya-vim.git'
-Bundle 'https://github.com/thinca/vim-qfreplace.git'
-Bundle 'https://github.com/nanotech/jellybeans.vim'
-Bundle 'https://github.com/Lokaltog/vim-powerline.git'
+if has('vim_starting')
+    set rtp+=~/.vim/bundle/neobundle.vim
+endif
+
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimfiler.git'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neocomplcache-snippets-complete'
+NeoBundle 'Shougo/vimproc', {
+      \ 'build' : {
+      \     'windows' : 'echo "Sorry, cannot update vimproc binary file in Windows."',
+      \     'cygwin' : 'make -f make_cygwin.mak',
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
+NeoBundle 'tacroe/unite-mark.git'
+NeoBundle 'surround.vim'
+NeoBundle 'msanders/cocoa.vim'
+"NeoBundle 'minibufexpl.vim'
+NeoBundle 'Align'
+NeoBundle 'quickrun'
+NeoBundle 'thinca/vim-ref'
+NeoBundle 'JSON.vim'
+NeoBundle 'IndentAnything'
+NeoBundle 'Javascript-Indentation'
+NeoBundle 'smartchr'
+"NeoBundle 'tyru/eskk.vim.git'
+"NeoBundle 'mattn/hahhah-vim.git'
+"NeoBundle 'koron/u-nya-vim.git'
+NeoBundle 'thinca/vim-qfreplace.git'
+NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'Lokaltog/vim-powerline'
 
 filetype plugin indent on
 
