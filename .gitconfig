@@ -1,19 +1,21 @@
 [user]
     name = yashigani
     email = tai.fukui@gmail.com
+
 [core]
     pager = lv -c
     editor = vim
     excludesfile = /Users/taiki/.gitignore
     autocrlf = input
     quotepath = false
+
 [color]
     ui = auto
+
 [alias]
     st = status
     sh = show
     br = branch
-    ft = fetch
     ad = add
     co = checkout
     cb = checkout -b
@@ -24,6 +26,12 @@
     mcm = merge --no-ff --no-commit
 
     reset-top = reset --hard HEAD~
+
+    ft = fetch
+    pl = pull
+    pus = push
+    puhs = push
+    ph = push
 
 # log
     gr = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
@@ -52,3 +60,6 @@
     edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
 # mergeの際にconflictが起きたファイルをadd
     add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
+
+[push]
+    default = upstream
