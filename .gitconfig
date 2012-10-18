@@ -13,17 +13,21 @@
     ui = auto
 
 [alias]
-    st = status
+    s = status -sb
+    st = status -sb
     sh = show
     br = branch
     ad = add
     co = checkout
     cb = checkout -b
+    ct = checkout -t # ex) co -t origin/hoge -> co hoge and track origin/hoge
+    rb = rebase
+    ri = rebase -i
 
     cm = commit
     ca = commit -a
 
-    mcm = merge --no-ff --no-commit
+    mc = merge --no-ff --no-commit
 
     reset-top = reset --hard HEAD~
 
@@ -35,8 +39,8 @@
 
 # log
     gr = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
-    ls = log --stat  # 変更されたファイルも表示
-    lp = log -p      # diff も表示
+    ls = log --stat --abbrev-commit  # 変更されたファイルも表示
+    lp = log -p --abbrev-commit      # diff も表示
 
 # for git-svn
     srb = svn rebase
