@@ -11,7 +11,7 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.git'
 NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neocomplcache-snippets-complete'
+NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/vimproc', {
       \ 'build' : {
       \     'windows' : 'echo "Sorry, cannot update vimproc binary file in Windows."',
@@ -285,13 +285,16 @@ inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y> neocomplcache#close_popup()
 "inoremap <expr><C-e> neocomplcache#cancel_popup()
 
-""" snippet list
-noremap es :<C-u>NeoComplCacheEditSnippets<CR>
+"" NeoSnippet
+noremap es :<C-u>NeoSnippetEdit<CR>
 """ snippets expand key
-imap <C-k> <Plug>(neocomplcache_snippets_expand)
-smap <C-k> <Plug>(neocomplcache_snippets_jump)
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
 """ snippets dir
-let g:neocomplcache_snippets_dir = $HOME.'/.vim/snippets'
+let g:neosnippet#snippets_directory= $HOME.'/.vim/snippets'
+let g:neosnippet#disable_runtime_snippets = {
+  \ 'objc' : 1,
+  \ }
 
 """ miniBufExpl
 "let g:miniBufExplMapWindowNavVim = 0

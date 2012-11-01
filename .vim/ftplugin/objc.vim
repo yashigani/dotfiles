@@ -5,9 +5,6 @@ set shiftwidth=4
 " yashigani keymappings
 noremap <C-l> <C-u>:ListMethods<CR>
 
-" desable default snippet
-let g:neocomplcache_snippets_disable_runtime_snippets = 1
-
 "" ( で今いるブロックを確認
 "" http://subtech.g.hatena.ne.jp/motemen/20110817/1313577108
 "nnoremap <buffer> <silent> ( :<C-U>call PreviewOpenBrace()<CR>
