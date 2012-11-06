@@ -8,6 +8,7 @@ endif
 
 call neobundle#rc(expand('~/.vim/bundle/'))
 
+NeoBundle 'Shougo/neobundle'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.git'
 NeoBundle 'Shougo/neocomplcache'
@@ -20,10 +21,9 @@ NeoBundle 'Shougo/vimproc', {
       \     'unix' : 'make -f make_unix.mak',
       \    },
       \ }
-NeoBundle 'tacroe/unite-mark.git'
+"NeoBundle 'tacroe/unite-mark.git'
 NeoBundle 'surround.vim'
 NeoBundle 'msanders/cocoa.vim'
-"NeoBundle 'minibufexpl.vim'
 NeoBundle 'Align'
 NeoBundle 'quickrun'
 NeoBundle 'thinca/vim-ref'
@@ -128,15 +128,6 @@ set virtualedit+=block
 " バッファ関連
 "" セーブせずにバッファを切り替えられるようにする
 set hid
-"" <C-p>, <C-n> でバッファ移動
-" nmap <C-p> :bp<CR>
-" nmap <C-n> :bn<CR>
-
-"" バッファ切替
-"nmap wk <C-w>k
-"nmap wl <C-w>l
-"nmap wj <C-w>j
-"nmap wh <C-w>h
 
 " キーマッピング
 "" j,kを物理的移動に
@@ -153,11 +144,6 @@ nnoremap ; :
 nnoremap : ;
 vnoremap ; :
 vnoremap : ;
-
-"" for tab
-"nnoremap to :<C-u>tabnew<CR>
-"nnoremap tn :<C-u>tabNext<CR>
-"nnoremap tc :<C-u>tabclose<CR>
 
 "" <C-h> で help をひく
 nnoremap <C-h> :<C-u>help<space>
@@ -295,19 +281,6 @@ let g:neosnippet#snippets_directory= $HOME.'/.vim/snippets'
 let g:neosnippet#disable_runtime_snippets = {
   \ 'objc' : 1,
   \ }
-
-""" miniBufExpl
-"let g:miniBufExplMapWindowNavVim = 0
-"let g:miniBufExplSplitBelow = 0
-"let g:miniBufExplMapWindowNavArrows = 1
-"let g:miniBufExplMapCTabSwitchBufs = 1
-"let g:miniBufExplModSelTarget = 1
-"let g:miniBufExplSplitToEdge = 1
-"let g:miniBufExplMaxSize = 10
-"
-"""" :Tmでminibufexplorerの表示トグル
-"command! Tm :TMiniBufExplorer
-
 
 "" Unite
 nnoremap ,u :<C-u>Unite<Space>
