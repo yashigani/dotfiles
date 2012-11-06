@@ -28,8 +28,6 @@ alias vim='env Lang=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"
 
 # Load RVM function
 if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then source $HOME/.rvm/scripts/rvm ; fi
-# for ruby
-#export PATH=$DEV_TOOLS/refe:$PATH
 
 # for Scala
 export SCALA_HOME=$DEV_TOOLS/scala-2.8.0.final
@@ -174,3 +172,9 @@ unsetopt flow_control
 
 #^Dでログアウトしない
 setopt ignore_eof
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+if [ -e $HOME/.zshrc_local ]; then
+    source $HOME/.zshrc_local
+fi

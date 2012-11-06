@@ -102,13 +102,13 @@ snippet pro
     @property (${1:retain}, nonatomic) ${2} ${3};
 
 snippet mpro
-    @property (nonatomic, ${1:retain}) ${2} *${3};
+    @property (nonatomic, ${1:retain}) ${2} ${3};
 
 snippet ibo
     IBOutlet ${1}
 
 snippet syn
-    @synthesize ${1} = $1_;
+    @synthesize ${1} = $1_;${0}
 
 snippet bp
     ${1:Return_type}(^)(${3:param types})${2:name}
@@ -145,7 +145,7 @@ abbr addObserver for kvo
     [${1:obj} addObserver:${2:self}
                forKeyPath:${3}
                   options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionInitial
-                  context:NULL];
+                  context:NULL];${0}
 
 snippet kvoob
 abbr KVO observing
@@ -169,3 +169,6 @@ snippet arrenu
 
 snippet pragma
     #pragma mark - ${0}
+
+snippet iba
+    - (IBAction)${1}:(id)sender;${0}
