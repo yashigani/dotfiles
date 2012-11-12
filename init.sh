@@ -4,5 +4,6 @@ ln -siv ~/dotfiles/.gitignore ~/.gitignore
 ln -siv ~/dotfiles/.zshrc ~/.zshrc
 ln -siv ~/dotfiles/.vimrc ~/.vimrc
 ln -siv ~/dotfiles/.vim ~/.vim
+ln -siv ~/dotfiles/.gvimrc ~/.gvimrc
 
 git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
