@@ -6,7 +6,7 @@ abbr        import "hoge.h"
     #import "${1}.h"
 
 snippet sel
-    @selector(${1})
+    @selector(${1})${0}
 
 snippet loc
     NSLocalizedString(@"${1}", ${2:nil})
@@ -154,10 +154,10 @@ abbr KVO observing
         ${1}
     }
 
-snippet uin
+snippet uim
     [UIImage imageNamed:@"${1}"]
 
-snippet nin
+snippet nim
     [NSImage imageNamed:@"${1}"]
 
 snippet uic
