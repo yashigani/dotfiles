@@ -23,7 +23,7 @@ NeoBundle 'Shougo/vimproc', {
       \ }
 "NeoBundle 'tacroe/unite-mark.git'
 NeoBundle 'surround.vim'
-NeoBundle 'msanders/cocoa.vim'
+NeoBundle 'yashigani/cocoa.vim'
 NeoBundle 'Align'
 NeoBundle 'quickrun'
 NeoBundle 'thinca/vim-ref'
@@ -181,14 +181,6 @@ inoremap <C-d> <Del>
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
 
-""" カッコを便利に
-"inoremap {} {}<left>
-"inoremap [] []<left>
-"inoremap () ()<left>
-"inoremap "" ""<left>
-"inoremap '' ''<left>
-"inoremap <> <><left>
-
 " jis キーボード環境でインサートモード時の誤爆を防ぐ
 inoremap <C-@> <C-[>
 "inoremap <C-]> <C-[>
@@ -232,9 +224,9 @@ augroup END
 nmap s <Plug>Ysurround
 nmap ss <Plug>Yssurround
 
-"" quickrun
-let g:quickrun_config = {}
-let g:quickrun_config['*']  =  {'split': 'rightbelow'}
+""" quickrun
+"let g:quickrun_config = {}
+"let g:quickrun_config['*']  =  {'split': 'rightbelow'}
 
 """ grepbuffer
 "command! -nargs=1 Gb :GrepBuffer <args>
