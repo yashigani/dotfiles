@@ -5,7 +5,7 @@
 [core]
     pager = lv -c
     editor = vim
-    excludesfile = /Users/taiki/.gitignore
+    excludesfile = ~/.gitignore
     autocrlf = input
     quotepath = false
 
