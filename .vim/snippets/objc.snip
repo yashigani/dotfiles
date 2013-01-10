@@ -11,9 +11,6 @@ snippet sel
 snippet loc
     NSLocalizedString(@"${1}", ${2:nil})
 
-snippet locf
-    NSLocalizedString(@"${1}", @"$1")
-
 snippet log
     NSLog(@"%s, ${1}%@", __PRETTY_FUNCTION__, ${2});${0}
 
@@ -59,17 +56,6 @@ snippet dea
     [super dealloc];
     }
 
-snippet cl
-    @interface ${1} : ${2:NSObject}
-    @end
-
-    @implementation $1
-    - (void)dealloc
-    {
-        [super dealloc];
-    }
-    @end
-
 snippet cli
     @interface ${1} : ${2}
     @end
@@ -97,6 +83,9 @@ snippet cat
 
     @implementation $1 ($2)
     @end
+
+snippet cl
+    @class ${0};
 
 snippet pro
     @property (${1:retain}, nonatomic) ${2} ${3};
@@ -140,10 +129,10 @@ snippet disone
     dispatch_once(&o, ^{${0}
     });
 
-snippet kvoaddob
+snippet kvoadd
 abbr addObserver for kvo
     [${1:obj} addObserver:${2:self}
-               forKeyPath:${3}
+               forKeyPath:@"${3}"
                   options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionInitial
                   context:NULL];${0}
 
