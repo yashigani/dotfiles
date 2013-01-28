@@ -27,6 +27,7 @@
     cm = commit
     ca = commit -a
 
+    mg = merge
     mc = merge --no-ff --no-commit
 
     reset-top = reset --hard HEAD~
