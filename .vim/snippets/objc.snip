@@ -61,7 +61,11 @@ snippet cli
     @end
 
 snippet clm
+    @interface $1 ()
+    @end
+
     @implementation ${1}
+    ${0}
     @end
 
 snippet cati
@@ -86,6 +90,9 @@ snippet cat
 
 snippet cl
     @class ${0};
+
+snippet prot
+    @protocol ${0}
 
 snippet pro
     @property (${1:retain}, nonatomic) ${2} ${3};
@@ -161,3 +168,9 @@ snippet pragma
 
 snippet iba
     - (IBAction)${1}:(id)sender;${0}
+
+snippet obn
+    - (void)${1}:(NSNotification *)notify
+    {
+        ${0}
+    }
