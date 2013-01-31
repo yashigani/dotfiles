@@ -12,11 +12,6 @@ export _JAVA_OPTIONS='-Dfile.encoding=UTF-8'
 
 # set terminfo
 export TERMINFO=/usr/share/terminfo
-# dev tools path
-export DEV_TOOLS=/Users/taiki/dev_tools
-# for Android SDK
-export ANDROID_SDK_HOME=$DEV_TOOLS/android
-export PATH=$ANDROID_SDK_HOME/tools:$ANDROID_SDK_HOME/platform-tools:$PATH
 
 # iPhone Simulator Directory
 alias simulator='cd ~/Library/Application\ Support/iPhone\ Simulator'
@@ -27,9 +22,6 @@ if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ]; then
   alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
   alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 fi
-
-# Load RVM function
-if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then source $HOME/.rvm/scripts/rvm ; fi
 
 # for MacPorts
 if [ -f /opt/local/bin/port ]; then
