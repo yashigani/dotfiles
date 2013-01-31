@@ -23,24 +23,21 @@ alias simulator='cd ~/Library/Application\ Support/iPhone\ Simulator'
 
 ## MacVim-Kaoriya を Terminal から使う
 export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
-alias vi='env Lang=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-alias vim='env Lang=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ]; then
+  alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+  alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+fi
 
 # Load RVM function
 if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then source $HOME/.rvm/scripts/rvm ; fi
 
-# for Scala
-export SCALA_HOME=$DEV_TOOLS/scala-2.8.0.final
-export PATH=$SCALA_HOME/bin:$DEV_TOOLS/sbt:$PATH
-
 # for MacPorts
-export PATH=/opt/local/bin:/opt/local/sbin/:$PATH
-export MANPATH=/opt/local/man:$MANPATH
+if [ -f /opt/local/bin/port ]; then
+    export PATH=/opt/local/bin:/opt/local/sbin/:$PATH
+    export MANPATH=/opt/local/man:$MANPATH
+fi
 #
 # # ruby関連
-# export PATH=~/lang/ruby/gems/bin:$PATH
-# export RUBYLIB=~/lang/ruby/gems/lib:$RUBYLIB
-# export GEM_HOME=~/lang/ruby/gems
 # # specコマンドにオプションを足しておく
 # alias spec='spec -fs -c'
 
