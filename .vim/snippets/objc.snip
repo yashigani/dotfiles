@@ -1,3 +1,5 @@
+#code base
+
 snippet imp
     #import <${1}.h>
 
@@ -76,16 +78,16 @@ snippet catm
     @implementation ${1} (${2})
     @end
 
-snippet cle
-abbr class extensions
-    @interface ${1} ()
-    @end
-
 snippet cat
     @interface ${1} (${2})
     @end
 
     @implementation $1 ($2)
+    @end
+
+snippet cle
+abbr class extensions
+    @interface ${1} ()
     @end
 
 snippet cl
@@ -95,7 +97,7 @@ snippet prot
     @protocol ${0}
 
 snippet pro
-    @property (${1:retain}, nonatomic) ${2} ${3};
+    @property (${1:strong}, nonatomic) ${2} ${3};
 
 snippet mpro
     @property (nonatomic, ${1:retain}) ${2} ${3};
@@ -106,6 +108,9 @@ snippet ibo
 snippet syn
     @synthesize ${1} = $1_;${0}
 
+snippet iba
+    - (IBAction)${1}:(id)sender;${0}
+
 snippet bp
     ${1:Return_type}(^)(${3:param types})${2:name}
 
@@ -113,6 +118,8 @@ snippet ib
     ${1:Return_type}(^${2:name})(${3:param types}) = ^(${4:params}) {
         ${0}
     }
+
+# with GCD
 
 snippet defblock
     typedef ${1:return type}(^${2:name})(${3:arguments});
@@ -135,6 +142,26 @@ snippet disone
     static dispatch_once_t o;
     dispatch_once(&o, ^{${0}
     });
+
+# shortcut
+
+snippet defcenter
+    [NSNotificationCenter defaultCenter]${0}
+
+snippet addnot
+    [[NSNotificationCenter defaultCenter] addObserver:${2:self}
+                                             selector:@selector(${3}:)
+                                                 name:${4}
+                                               object:${5}];${0}
+
+snippet remnot
+    [[NSNotificationCenter defaultCenter] removeObserver:${1:self}];${0}
+
+snippet obnot
+    - (void)${1}:(NSNotification *)notify
+    {
+        ${0}
+    }
 
 snippet kvoadd
 abbr addObserver for kvo
@@ -165,12 +192,3 @@ snippet arrenu
 
 snippet pragma
     #pragma mark - ${0}
-
-snippet iba
-    - (IBAction)${1}:(id)sender;${0}
-
-snippet obn
-    - (void)${1}:(NSNotification *)notify
-    {
-        ${0}
-    }
