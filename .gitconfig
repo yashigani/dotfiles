@@ -31,6 +31,7 @@
     mc = merge --no-ff --no-commit
 
     reset-top = reset --hard HEAD~
+    delete-merged = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
 
     ft = fetch
     pl = pull
