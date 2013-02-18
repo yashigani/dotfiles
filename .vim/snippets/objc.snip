@@ -94,7 +94,12 @@ snippet cl
     @class ${0};
 
 snippet prot
-    @protocol ${0}
+    @protocol ${0};
+
+snippet protocol
+    @protocol ${1}
+    ${0}
+    @end
 
 snippet pro
     @property (${1:strong}, nonatomic) ${2} ${3};
