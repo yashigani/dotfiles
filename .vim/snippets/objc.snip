@@ -97,8 +97,7 @@ snippet prot
     @protocol ${0};
 
 snippet protocol
-    @protocol ${1}
-    ${0}
+    @protocol ${1} ${0}
     @end
 
 snippet pro
@@ -120,8 +119,7 @@ snippet bp
     ${1:Return_type}(^)(${3:param types})${2:name}
 
 snippet ib
-    ${1:Return_type}(^${2:name})(${3:param types}) = ^(${4:params}) {
-        ${0}
+    ${1:Return_type}(^${2:name})(${3:param types}) = ^(${4:params}) { ${0}
     }
 
 # with GCD
@@ -136,17 +134,22 @@ snippet disafter
 
 snippet disasync
     dispatch_queue_t q = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_async(q, ^{${0}
-    });
+    dispatch_async(q, ^{${0} });
+
+snippet disgroup
+    dispatch_queue_t q = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_group_t g = dispatch_group_create(); ${0}
+    dispatch_release(g);
 
 snippet dismain
-    dispatch_async(dispatch_get_main_queue(), ^{${0}
-    });
+    dispatch_async(dispatch_get_main_queue(), ^{${0} });
 
 snippet disone
     static dispatch_once_t o;
-    dispatch_once(&o, ^{${0}
-    });
+    dispatch_once(&o, ^{${0} });
+
+snippet mainq
+    dispatch_get_main_queue()
 
 # shortcut
 
