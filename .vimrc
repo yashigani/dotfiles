@@ -279,7 +279,7 @@ nnoremap ,u :<C-u>Unite<Space>
 nnoremap ,ud :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap ,ug :<C-u>Unite -no-quit grep:
 nnoremap <silent> ss :<C-u>Unite -buffer-name=files file_rec:. file file_mru<CR>
-nnoremap <silent> sf :<C-u>Unite -buffer-name=files file file_mru<CR>
+nnoremap <silent> sf :<C-u>Unite -buffer-name=files file file_mru file/new<CR>
 nnoremap <silent> sg :<C-u>Unite -no-quit grep:./:<CR>
 nnoremap <C-n> :<C-u>Unite buffer<CR>
 nnoremap <silent> sm :<C-u>Unite mark<CR>
