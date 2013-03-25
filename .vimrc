@@ -37,6 +37,7 @@ NeoBundle 'smartchr'
 NeoBundle 'thinca/vim-qfreplace.git'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'h1mesuke/unite-outline'
 
 filetype plugin indent on
 
@@ -133,6 +134,8 @@ set hid
 "" j,kを物理的移動に
 nnoremap j gj
 nnoremap k gk
+vnoremap j gj
+vnoremap k gk
 "" 0, $を物理的に
 nnoremap 0 g0
 nnoremap g0 0
