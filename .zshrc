@@ -17,10 +17,10 @@ export TERMINFO=/usr/share/terminfo
 alias simulator='cd ~/Library/Application\ Support/iPhone\ Simulator'
 
 ## MacVim-Kaoriya を Terminal から使う
-export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ]; then
-  alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-  alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+    export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
+    alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+    alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 fi
 
 # for MacPorts
@@ -161,8 +161,6 @@ unsetopt flow_control
 
 #^Dでログアウトしない
 setopt ignore_eof
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 if [ -e $HOME/.zshrc_local ]; then
     source $HOME/.zshrc_local
