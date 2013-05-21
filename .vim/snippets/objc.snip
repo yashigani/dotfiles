@@ -22,6 +22,9 @@ snippet flog
 snippet slog
     NSLog(@"${1}", ${2});${0}
 
+snippet fslog
+    FRLog(@"${1}", ${2});${0}
+
 snippet st
     @"${1}"${0}
 
@@ -108,6 +111,9 @@ snippet pro
 
 snippet mpro
     @property (nonatomic, ${1:retain}) ${2} ${3};
+
+snippet mproo
+    @property (nonatomic, retain) IBOutlet ${1} ${2};
 
 snippet ibo
     IBOutlet ${1}
@@ -203,3 +209,13 @@ snippet arrenu
 
 snippet pragma
     #pragma mark - ${0}
+
+snippet extern
+    extern NSString * const ${1};
+    NSString * const $1 = @"$1";${0}
+
+snippet cact
+    - (IBAction)${1}Clicked:(id)sender;
+
+snippet tact
+    - (IBAction)${1}Tapped:(id)sender;

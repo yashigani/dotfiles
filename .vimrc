@@ -239,22 +239,15 @@ nmap ss <Plug>Yssurround
 "" neocomplcache
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_auto_completion_start_length = 3
+let g:neocomplcache_min_syntax_length = 3
 let g:neocomplcache_enable_ignore_case = 0
 let g:neocomplcache_enable_auto_select = 0
 let g:neocomplcache_dictionary_filetype_lists = {
     \ 'default' : '',
     \ }
-
-let g:NeoComplCache_PluginCompletionLength = {
-  \ 'snipMate_complete' : 1,
-  \ 'buffer_complete' : 1,
-  \ 'include_complete' : 2,
-  \ 'syntax_complete' : 2,
-  \ 'filename_complete' : 2,
-  \ 'keyword_complete' : 2,
-  \ 'omni_complete' : 1
-  \ }
+if !exists('g:neocomplcache_keyword_patterns')
+        let g:neocomplcache_keyword_patterns = {}
+endif
 
 """ neocomplecache のトグル
 noremap ,tn :<C-u>NeoComplCacheToggle<CR>
@@ -285,7 +278,6 @@ nnoremap <silent> ss :<C-u>Unite -buffer-name=files file_rec:. file file_mru<CR>
 nnoremap <silent> sf :<C-u>Unite -buffer-name=files file file_mru file/new<CR>
 nnoremap <silent> sg :<C-u>Unite -no-quit grep:./:<CR>
 nnoremap <C-n> :<C-u>Unite buffer<CR>
-nnoremap <silent> sm :<C-u>Unite mark<CR>
 
 """ ウィンドウを縦に分割して開く
 au FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('vsplit')
