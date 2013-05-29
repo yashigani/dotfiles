@@ -23,7 +23,7 @@ NeoBundle 'Shougo/vimproc', {
       \ }
 "NeoBundle 'tacroe/unite-mark.git'
 NeoBundle 'surround.vim'
-NeoBundle 'yashigani/cocoa.vim'
+NeoBundle 'b4winckler/vim-objc'
 NeoBundle 'Align'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'thinca/vim-ref'
