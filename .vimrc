@@ -53,6 +53,7 @@ filetype plugin indent on
 set list
 set listchars=tab:>-,eol:$
 
+set nowrap                      " 折り返しを無効に
 set textwidth=0                 " 一行に長い文章を書いていても自動折り返しをしない
 set nobackup                    " バックアップを取らない
 set autoread                    " 他で更新されたら自動で読み直す
@@ -136,11 +137,11 @@ nnoremap j gj
 nnoremap k gk
 vnoremap j gj
 vnoremap k gk
-"" 0, $を物理的に
-nnoremap 0 g0
-nnoremap g0 0
-nnoremap $ g$
-nnoremap g$ $
+""" 0, $を物理的に
+"nnoremap 0 g0
+"nnoremap g0 0
+"nnoremap $ g$
+"nnoremap g$ $
 
 "" ; と : を入れ替え
 nnoremap ; :
