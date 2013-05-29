@@ -25,7 +25,7 @@ NeoBundle 'Shougo/vimproc', {
 NeoBundle 'surround.vim'
 NeoBundle 'yashigani/cocoa.vim'
 NeoBundle 'Align'
-NeoBundle 'quickrun'
+NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'JSON.vim'
 NeoBundle 'IndentAnything'
