@@ -23,13 +23,11 @@ NeoBundle 'Shougo/vimproc', {
       \ }
 "NeoBundle 'tacroe/unite-mark.git'
 NeoBundle 'surround.vim'
-NeoBundle 'b4winckler/vim-objc'
+NeoBundle 'yashigani/cocoa.vim'
 NeoBundle 'Align'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'thinca/vim-ref'
-NeoBundle 'JSON.vim'
-NeoBundle 'IndentAnything'
-NeoBundle 'Javascript-Indentation'
+NeoBundleLazy 'JSON.vim', {'autoload':{'filetypes':['json']}}
 NeoBundle 'smartchr'
 "NeoBundle 'tyru/eskk.vim.git'
 "NeoBundle 'mattn/hahhah-vim.git'
@@ -117,8 +115,8 @@ set fenc=utf-8
 set fencs=iso-2022-jp,enc-jp,cp932
 set ffs=unix,dos,mac
 
-" .json のファイルは json に filetype を設定
 au! BufRead,BufNewFile *.json set filetype=json
+au! BufRead,BufNewFile *.md set filetype=markdown
 au! BufRead,BufNewFile *.h set filetype=objc
 
 " <C-e> で :e ++enc=utf-8
