@@ -219,3 +219,8 @@ snippet cact
 
 snippet tact
     - (IBAction)${1}Tapped:(id)sender;
+
+snippet diagnostic
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-W${1}"${0}
+    #pragma clang diagnostic pop
