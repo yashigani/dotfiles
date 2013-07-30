@@ -1,4 +1,4 @@
-colorscheme desert
+colorscheme jellybeans
 
 if has('gui_macvim')
     set transparency=10
