@@ -288,6 +288,8 @@ let g:unite_source_file_rec_ignore_pattern = '\%(^\|/\)\.$\|\~$\|\.\%(DS_Store\|
 """ ESCキーを2回押すと終了する
 "au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
 "au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
+"
+let g:unite_source_grep_max_candidates = 500
 
 "" VimFiler
 let g:vimfiler_as_default_explorer = 1
