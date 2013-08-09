@@ -1,18 +1,13 @@
 " for NeoBundle
 set nocompatible
-filetype off
 
 if has('vim_starting')
-    set rtp+=~/.vim/bundle/neobundle.vim
+    set runtimepath+=~/.vim/bundle/neobundle.vim
 endif
 
 call neobundle#rc(expand('~/.vim/bundle/'))
 
-NeoBundle 'Shougo/neobundle'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimfiler.git'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet'
+NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc', {
       \ 'build' : {
       \     'windows' : 'echo "Sorry, cannot update vimproc binary file in Windows."',
@@ -21,10 +16,15 @@ NeoBundle 'Shougo/vimproc', {
       \     'unix' : 'make -f make_unix.mak',
       \    },
       \ }
+
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimfiler.git'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neosnippet'
 "NeoBundle 'tacroe/unite-mark.git'
 NeoBundle 'surround.vim'
-NeoBundle 'yashigani/cocoa.vim'
-NeoBundle 'b4winckler/vim-objc'
+NeoBundleLazy 'yashigani/cocoa.vim', {'autoload':{'filetypes':['objc','objcpp']}}
+NeoBundleLazy 'b4winckler/vim-objc', {'autoload':{'filetypes':['objc','objcpp']}}
 NeoBundle 'Align'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'thinca/vim-ref'
@@ -39,13 +39,13 @@ NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'h1mesuke/unite-outline'
 
 filetype plugin indent on
+NeoBundleCheck
 
 set number
 set smartindent
 set smarttab
 set visualbell
 syntax enable
-filetype plugin indent on
 
 " タブの左側にカーソル表示
 "set listchars=tab:\ \
@@ -231,11 +231,6 @@ nmap ss <Plug>Yssurround
 "let g:quickrun_config = {}
 "let g:quickrun_config['*']  =  {'split': 'rightbelow'}
 
-""" grepbuffer
-"command! -nargs=1 Gb :GrepBuffer <args>
-"nnoremap <C-g><C-b> :<c-u>GrepBuffer<Space><C-r><C-w><Enter>
-
-
 "" neocomplcache
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
@@ -248,6 +243,13 @@ let g:neocomplcache_dictionary_filetype_lists = {
 if !exists('g:neocomplcache_keyword_patterns')
         let g:neocomplcache_keyword_patterns = {}
 endif
+
+if !exists('g:neocomplcache_force_omni_patterns')
+    let g:neocomplcache_force_omni_patterns = {}
+endif
+let g:neocomplcache_force_omni_patterns.objc =
+      \ '[^.[:digit:] *\t]\%(\.\|->\)'
+
 
 """ neocomplecache のトグル
 noremap ,tn :<C-u>NeoComplCacheToggle<CR>
