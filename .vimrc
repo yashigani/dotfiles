@@ -37,6 +37,9 @@ NeoBundle 'thinca/vim-qfreplace.git'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'h1mesuke/unite-outline'
+NeoBundle 'kien/ctrlp.vim.git'
+NeoBundle 'tokorom/ctrlp-docset.git'
+NeoBundle 'yuratomo/w3m.vim.git'
 
 filetype plugin indent on
 NeoBundleCheck
@@ -100,10 +103,10 @@ augroup cch
   autocmd WinEnter,BufRead * set cursorline
 augroup end
 
-:hi clear cursorline
-:hi cursorline gui=underline
-" 強調はアンダーラインを消してハイライトに
-highlight cursorline cterm=none ctermbg=lightblue
+":hi clear cursorline
+":hi cursorline gui=underline
+"" 強調はアンダーラインを消してハイライトに
+"highlight cursorline cterm=none ctermbg=lightblue
 
 " カラースキーマの設定
 :colorscheme jellybeans
@@ -300,6 +303,11 @@ let g:vimfiler_as_default_explorer = 1
 "" smartchr
 inoremap <expr> = smartchr#loop(' = ', ' == ', '=')
 inoremap <expr> , smartchr#loop(', ', ',')
+
+"" CtrlP Docsets
+let g:ctrlp_docset_docsetutil_command = '/Applications/Xcode5-DP5.app/Contents/Developer/usr/bin/docsetutil'
+let g:ctrlp_docset_filepaths = {'objc': '~/Library/Developer/Shared/Documentation/DocSets/com.apple.adc.documentation.AppleiOS7.0.iOSLibrary.docset'}
+let g:ctrlp_docset_accept_command = ':W3mSplit local %s'
 
 " 文字コードの自動認識 from ずんwiki
 " http://www.kawaz.jp/pukiwiki/?vim#b5ffaff5
