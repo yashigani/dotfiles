@@ -16,8 +16,14 @@ snippet loc
 snippet log
     NSLog(@"%s, ${1}%@", __PRETTY_FUNCTION__, ${2});${0}
 
+snippet logp
+    NSLog(@"%s, ${1}: %${2}", __PRETTY_FUNCTION__, $1);${0}
+
 snippet flog
     FRLog(@"%s, ${1}%@", __PRETTY_FUNCTION__, ${2});${0}
+
+snippet flogp
+    FRLog(@"%s, ${1}: %${2}", __PRETTY_FUNCTION__, $1);${0}
 
 snippet slog
     NSLog(@"${1}", ${2});${0}
@@ -44,7 +50,7 @@ snippet rel
     [${1} release];
 
 snippet in
-    - (id)init
+    - (instancetype)init
     {
         self = [super ${1:init}];
         if (self) {${0}
@@ -183,7 +189,7 @@ snippet kvoadd
 abbr addObserver for kvo
     [${1:obj} addObserver:${2:self}
                forKeyPath:@"${3}"
-                  options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionInitial
+                  options:NSKeyValueObservingOptionOld
                   context:NULL];${0}
 
 snippet kvoob
@@ -226,3 +232,6 @@ snippet diagnostic
 
 snippet defaults
     NSUserDefaults *defaults = NSUserDefaults.standardUserDefaults;
+
+snippet wref
+    __weak __typeof(${1}) ${2} = $1;${0}
