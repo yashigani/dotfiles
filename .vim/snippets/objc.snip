@@ -235,3 +235,10 @@ snippet defaults
 
 snippet wref
     __weak __typeof(${1}) ${2} = $1;${0}
+
+snippet frame
+    ${1}.frame = ({
+        CGRect frame = $1.frame;
+        ${0}
+        frame;
+    });
