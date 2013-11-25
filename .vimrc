@@ -40,6 +40,8 @@ NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'kien/ctrlp.vim.git'
 NeoBundle 'tokorom/ctrlp-docset.git'
 NeoBundle 'yuratomo/w3m.vim.git'
+NeoBundle 'osyo-manga/vim-over'
+NeoBundle 'LeafCage/yankround.vim'
 
 filetype plugin indent on
 NeoBundleCheck
@@ -282,7 +284,7 @@ nnoremap ,ug :<C-u>Unite -no-quit grep:
 nnoremap <silent> ss :<C-u>Unite -buffer-name=files file_rec:. file file_mru<CR>
 nnoremap <silent> sf :<C-u>Unite -buffer-name=files file file_mru file/new<CR>
 nnoremap <silent> sg :<C-u>Unite -no-quit grep:./:<CR>
-nnoremap <C-n> :<C-u>Unite buffer<CR>
+nnoremap <C-l> :<C-u>Unite buffer<CR>
 
 """ ウィンドウを縦に分割して開く
 au FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('vsplit')
@@ -308,6 +310,17 @@ inoremap <expr> , smartchr#loop(', ', ',')
 let g:ctrlp_docset_docsetutil_command = '/Applications/Xcode5-DP5.app/Contents/Developer/usr/bin/docsetutil'
 let g:ctrlp_docset_filepaths = {'objc': '~/Library/Developer/Shared/Documentation/DocSets/com.apple.adc.documentation.AppleiOS7.0.iOSLibrary.docset'}
 let g:ctrlp_docset_accept_command = ':W3mSplit local %s'
+
+"" vim-over
+nnoremap <silent> <Leader>m :OverCommandLine<CR>
+
+"" YankArround
+nmap p <Plug>(yankround-p)
+nmap P <Plug>(yankround-P)
+nmap <C-n> <Plug>(yankround-prev)
+nmap <C-p> <Plug>(yankround-next)
+
+let g:yankround_max_history = 50
 
 " 文字コードの自動認識 from ずんwiki
 " http://www.kawaz.jp/pukiwiki/?vim#b5ffaff5
