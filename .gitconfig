@@ -2,6 +2,9 @@
     name = yashigani
     email = tai.fukui@gmail.com
 
+[include]
+    path = ~/.gitconfig_local
+
 [core]
     pager = lv -c
     editor = vim
