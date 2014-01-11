@@ -8,6 +8,7 @@ Thumbs.db
 build/
 *.xcworkspace
 xcuserdata/
+Pods/
 
 ## for Android
 # built application files
