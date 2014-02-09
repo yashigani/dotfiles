@@ -294,7 +294,7 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-j> unite#do_action('vspli
 "let g:unite_source_file_rec_ignore_pattern = '\%(^\|/\)\.$\|\~$\|\.\%(DS_Store\|o\|exe\|dll\|bak\|sw[po]\|class\|png\|jpg\|xib\)$\|\%(^\|/\)\.\%(hg\|git\|bzr\|svn\)\%($\|/\)\|\%(^\|/\)\%(BuildArchive\|Build\|gen\|bin\|proguard\)\%($\|/\)\|\%(^\|/\).\+\.\%(xcodeproj\)\%($\|/\)'
 call unite#custom#source('file_rec', 
             \ 'ignore_pattern', join(['Pods\/', '\.xcassets$', 'build\/',
-            \ '\.xcodeproj$', '\.xcworkspace$'], '\|'))
+            \ '\.xcodeproj$', '\.xcworkspace$', '\.xib$', '\.git\/'], '\|'))
 
 """ ESCキーを2回押すと終了する
 "au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
