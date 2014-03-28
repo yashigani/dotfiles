@@ -19,9 +19,9 @@ NeoBundle 'Shougo/vimproc', {
 
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.git'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet'
-"NeoBundle 'tacroe/unite-mark.git'
+NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'surround.vim'
 NeoBundleLazy 'yashigani/cocoa.vim', {'autoload':{'filetypes':['objc','objcpp']}}
 NeoBundleLazy 'b4winckler/vim-objc', {'autoload':{'filetypes':['objc','objcpp']}}
@@ -30,15 +30,10 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'thinca/vim-ref'
 NeoBundleLazy 'JSON.vim', {'autoload':{'filetypes':['json']}}
 NeoBundle 'smartchr'
-"NeoBundle 'tyru/eskk.vim.git'
-"NeoBundle 'mattn/hahhah-vim.git'
-"NeoBundle 'koron/u-nya-vim.git'
 NeoBundle 'thinca/vim-qfreplace.git'
-NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'h1mesuke/unite-outline'
-NeoBundle 'kien/ctrlp.vim.git'
-NeoBundle 'tokorom/ctrlp-docset.git'
 NeoBundle 'yuratomo/w3m.vim.git'
 NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'LeafCage/yankround.vim'
@@ -111,7 +106,7 @@ augroup end
 "highlight cursorline cterm=none ctermbg=lightblue
 
 " カラースキーマの設定
-:colorscheme jellybeans
+colorscheme hybrid
 
 " コマンド実行中は再描画しない
 set lazyredraw
@@ -237,34 +232,34 @@ nmap ss <Plug>Yssurround
 "let g:quickrun_config['*']  =  {'split': 'rightbelow'}
 
 "" neocomplcache
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_enable_ignore_case = 0
-let g:neocomplcache_enable_auto_select = 0
-let g:neocomplcache_dictionary_filetype_lists = {
+let g:neocomplete_enable_at_startup = 1
+let g:neocomplete_enable_smart_case = 1
+let g:neocomplete_min_syntax_length = 3
+let g:neocomplete_enable_ignore_case = 0
+let g:neocomplete_enable_auto_select = 0
+let g:neocomplete_dictionary_filetype_lists = {
     \ 'default' : '',
     \ }
-if !exists('g:neocomplcache_keyword_patterns')
-        let g:neocomplcache_keyword_patterns = {}
+if !exists('g:neocomplete_keyword_patterns')
+        let g:neocomplete_keyword_patterns = {}
 endif
 
-if !exists('g:neocomplcache_force_omni_patterns')
-    let g:neocomplcache_force_omni_patterns = {}
+if !exists('g:neocomplete_force_omni_patterns')
+    let g:neocomplete_force_omni_patterns = {}
 endif
-let g:neocomplcache_force_omni_patterns.objc =
+let g:neocomplete_force_omni_patterns.objc =
       \ '[^.[:digit:] *\t]\%(\.\|->\)'
 
 
-""" neocomplecache のトグル
-noremap ,tn :<C-u>NeoComplCacheToggle<CR>
+""" neocomplete のトグル
+noremap ,tn :<C-u>neocompleteToggle<CR>
 """ 前回行われた補完をキャンセル
-inoremap <expr><C-g> neocomplcache#undo_completion()
+inoremap <expr><C-g> neocomplete#undo_completion()
 """ 共通部分のみ補完
-inoremap <expr><C-l> neocomplcache#complete_common_string()
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y> neocomplcache#close_popup()
-"inoremap <expr><C-e> neocomplcache#cancel_popup()
+inoremap <expr><C-l> neocomplete#complete_common_string()
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y> neocomplete#close_popup()
+"inoremap <expr><C-e> neocomplete#cancel_popup()
 
 "" NeoSnippet
 noremap es :<C-u>NeoSnippetEdit<CR>
