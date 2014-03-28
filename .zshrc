@@ -12,6 +12,7 @@ export _JAVA_OPTIONS='-Dfile.encoding=UTF-8'
 
 # set terminfo
 export TERMINFO=/usr/share/terminfo
+export TERM=xterm-256color
 
 # iPhone Simulator Directory
 alias simulator='cd ~/Library/Application\ Support/iPhone\ Simulator'
@@ -19,6 +20,7 @@ alias simulator='cd ~/Library/Application\ Support/iPhone\ Simulator'
 ## MacVim-Kaoriya を Terminal から使う
 if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ]; then
     export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
+    export GIT_EDITOR=$EDITOR
     alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
     alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 fi
