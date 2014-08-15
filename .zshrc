@@ -90,7 +90,7 @@ function rprompt-git-current-branch {
     gitdir=`git rev-parse --git-dir 2> /dev/null`
     action=`VCS_INFO_git_getaction "$gitdir"` && action="($action)"
 
-    st=`git status 2> /dev/null`
+    st=`git status --ignore-submodules 2> /dev/null`
     if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
         color=%F{green}
     elif [[ -n `echo "$st" | grep "^nothing added"` ]]; then
