@@ -47,6 +47,8 @@ set smarttab
 set visualbell
 syntax enable
 
+set noundofile
+
 " タブの左側にカーソル表示
 "set listchars=tab:\ \
 set list
