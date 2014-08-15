@@ -25,6 +25,7 @@ NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'surround.vim'
 NeoBundleLazy 'yashigani/cocoa.vim', {'autoload':{'filetypes':['objc','objcpp']}}
 NeoBundleLazy 'b4winckler/vim-objc', {'autoload':{'filetypes':['objc','objcpp']}}
+NeoBundleLazy 'Keithbsmiley/swift.vim', {'autoload':{'filetypes':['swift']}}
 NeoBundle 'Align'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'thinca/vim-ref'
@@ -121,6 +122,7 @@ set ffs=unix,dos,mac
 au! BufRead,BufNewFile *.json set filetype=json
 au! BufRead,BufNewFile *.md set filetype=markdown
 au! BufRead,BufNewFile *.h set filetype=objc
+au! BufRead,BufNewFile *.swift set filetype=swift
 
 " <C-e> で :e ++enc=utf-8
 nnoremap <C-e> :<C-u>e ++enc=utf-8<CR>
