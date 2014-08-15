@@ -33,7 +33,7 @@ NeoBundleLazy 'JSON.vim', {'autoload':{'filetypes':['json']}}
 NeoBundle 'smartchr'
 NeoBundle 'thinca/vim-qfreplace.git'
 NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'yuratomo/w3m.vim.git'
 NeoBundle 'osyo-manga/vim-over'
@@ -223,9 +223,10 @@ augroup END
 "let g:eskk_revert_henkan_style = "okuri"
 "let g:eskk_enable_completion = 0
 
-"" vim-powerline
-"let g:Powerline_symbols = 'fancy'
-"set t_Co=256
+"" lightline
+let g:lightline = {
+            \ 'colorscheme': 'wombat',
+            \ }
 
 "" surround
 nmap s <Plug>Ysurround
