@@ -9,6 +9,7 @@ build/
 *.xcworkspace
 xcuserdata/
 Pods/
+.idea/
 
 ## for Android
 # built application files

@@ -26,6 +26,7 @@
     ct = checkout -t # ex) co -t origin/hoge -> co hoge and track origin/hoge
     rb = rebase
     ri = rebase -i
+    h = status -sb
 
     cm = commit
     ca = commit -a
@@ -41,6 +42,7 @@
     pus = push
     puhs = push
     ph = push
+    pu = push -u
 
 # log
     gr = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short

@@ -34,7 +34,6 @@ NeoBundle 'smartchr'
 NeoBundle 'thinca/vim-qfreplace.git'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'yuratomo/w3m.vim.git'
 NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'LeafCage/yankround.vim'
@@ -125,6 +124,7 @@ au! BufRead,BufNewFile *.json set filetype=json
 au! BufRead,BufNewFile *.md set filetype=markdown
 au! BufRead,BufNewFile *.h set filetype=objc
 au! BufRead,BufNewFile *.swift set filetype=swift
+au! BufRead,BufNewFile Podfile set filetype=ruby
 
 " <C-e> で :e ++enc=utf-8
 nnoremap <C-e> :<C-u>e ++enc=utf-8<CR>
