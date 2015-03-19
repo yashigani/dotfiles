@@ -125,6 +125,7 @@ au! BufRead,BufNewFile *.md set filetype=markdown
 au! BufRead,BufNewFile *.h set filetype=objc
 au! BufRead,BufNewFile *.swift set filetype=swift
 au! BufRead,BufNewFile Podfile set filetype=ruby
+au! BufRead,BufNewFile *.podspec set filetype=ruby
 
 " <C-e> で :e ++enc=utf-8
 nnoremap <C-e> :<C-u>e ++enc=utf-8<CR>
@@ -293,10 +294,9 @@ au FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('vspli
 au FileType unite inoremap <silent> <buffer> <expr> <C-j> unite#do_action('vsplit')
 
 """ file_rec の ignore ファイル
-"let g:unite_source_file_rec_ignore_pattern = '\%(^\|/\)\.$\|\~$\|\.\%(DS_Store\|o\|exe\|dll\|bak\|sw[po]\|class\|png\|jpg\|xib\)$\|\%(^\|/\)\.\%(hg\|git\|bzr\|svn\)\%($\|/\)\|\%(^\|/\)\%(BuildArchive\|Build\|gen\|bin\|proguard\)\%($\|/\)\|\%(^\|/\).\+\.\%(xcodeproj\)\%($\|/\)'
 call unite#custom#source('file_rec', 
             \ 'ignore_pattern', join(['Pods\/', '\.xcassets$', 'build\/',
-            \ '\.xcodeproj$', '\.xcworkspace$', '\.xib$', '\.git\/'], '\|'))
+            \ '\.xcodeproj$', '\.xcworkspace$', '\.xib$', '\.git\/', '\.bundle\/', 'vendor\/'], '\|'))
 
 """ ESCキーを2回押すと終了する
 "au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
