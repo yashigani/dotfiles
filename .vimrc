@@ -37,6 +37,7 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'yuratomo/w3m.vim.git'
 NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'LeafCage/yankround.vim'
+NeoBundleLazy 'derekwyatt/vim-scala', {'autoload':{'filetypes':['scala']}}
 
 call neobundle#end()
 
@@ -126,6 +127,7 @@ au! BufRead,BufNewFile *.h set filetype=objc
 au! BufRead,BufNewFile *.swift set filetype=swift
 au! BufRead,BufNewFile Podfile set filetype=ruby
 au! BufRead,BufNewFile *.podspec set filetype=ruby
+au! BufRead,BufNewFile *.scala set filetype=scala
 
 " <C-e> で :e ++enc=utf-8
 nnoremap <C-e> :<C-u>e ++enc=utf-8<CR>
