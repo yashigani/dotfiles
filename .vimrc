@@ -211,23 +211,6 @@ augroup templates
 augroup END
 
 " plugins
-""" eskk.vim
-"if has('vim_starting')
-"    let g:eskk_dictionary = '~/.skk-jisyo'
-"
-"    if has('mac')
-"        let g:eskk_large_dictionary = "~/Library/Application\ Support/AquaSKK/SKK-JISYO.L"
-"    elseif has('win32') || has('win64')
-"        let g:eskk_large_dictionary = "~/SKK_JISYO.L"
-"    else
-"    endif
-"endif
-"
-"let g:eskk_debug = 0
-"let g:eskk_egg_like_newline = 1
-"let g:eskk_revert_henkan_style = "okuri"
-"let g:eskk_enable_completion = 0
-
 "" lightline
 let g:lightline = {
             \ 'colorscheme': 'wombat',
@@ -237,7 +220,7 @@ let g:lightline = {
 nmap s <Plug>Ysurround
 nmap ss <Plug>Yssurround
 
-""" quickrun
+"" quickrun
 "let g:quickrun_config = {}
 "let g:quickrun_config['*']  =  {'split': 'rightbelow'}
 
@@ -312,11 +295,6 @@ let g:vimfiler_as_default_explorer = 1
 "" smartchr
 inoremap <expr> = smartchr#loop(' = ', ' == ', '=')
 inoremap <expr> , smartchr#loop(', ', ',')
-
-"" CtrlP Docsets
-let g:ctrlp_docset_docsetutil_command = '/Applications/Xcode5-DP5.app/Contents/Developer/usr/bin/docsetutil'
-let g:ctrlp_docset_filepaths = {'objc': '~/Library/Developer/Shared/Documentation/DocSets/com.apple.adc.documentation.AppleiOS7.0.iOSLibrary.docset'}
-let g:ctrlp_docset_accept_command = ':W3mSplit local %s'
 
 "" vim-over
 nnoremap <silent> <Leader>m :OverCommandLine<CR>
