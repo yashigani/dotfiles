@@ -25,7 +25,6 @@ NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'surround.vim'
 NeoBundleLazy 'yashigani/cocoa.vim', {'autoload':{'filetypes':['objc','objcpp']}}
 NeoBundleLazy 'b4winckler/vim-objc', {'autoload':{'filetypes':['objc','objcpp']}}
-NeoBundleLazy 'Keithbsmiley/swift.vim', {'autoload':{'filetypes':['swift']}}
 NeoBundle 'Align'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'thinca/vim-ref'
@@ -296,7 +295,7 @@ let g:unite_source_grep_max_candidates = 500
 let g:vimfiler_as_default_explorer = 1
 
 "" smartchr
-inoremap <expr> = smartchr#loop(' = ', ' == ', '=')
+inoremap <expr> = smartchr#loop(' = ', ' == ', " === ", '=')
 inoremap <expr> , smartchr#loop(', ', ',')
 
 "" vim-over
