@@ -38,6 +38,7 @@ NeoBundle 'yuratomo/w3m.vim.git'
 NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'LeafCage/yankround.vim'
 NeoBundleLazy 'derekwyatt/vim-scala', {'autoload':{'filetypes':['scala']}}
+NeoBundleLazy 'leafgarland/typescript-vim', {'autoload': {'filetypes':['typescript']}}
 
 call neobundle#end()
 
@@ -128,6 +129,8 @@ au! BufRead,BufNewFile *.swift set filetype=swift
 au! BufRead,BufNewFile Podfile set filetype=ruby
 au! BufRead,BufNewFile *.podspec set filetype=ruby
 au! BufRead,BufNewFile *.scala set filetype=scala
+au! BufRead,BufNewFile *.ts set filetype=typescript
+au! BufRead,BufNewFile *.tsx set filetype=typescript
 
 " <C-e> で :e ++enc=utf-8
 nnoremap <C-e> :<C-u>e ++enc=utf-8<CR>
@@ -280,7 +283,7 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-j> unite#do_action('vspli
 
 """ file_rec の ignore ファイル
 call unite#custom#source('file_rec', 
-            \ 'ignore_pattern', join(['Pods\/', '\.xcassets$', 'build\/',
+            \ 'ignore_pattern', join(['Pods\/', '\.xcassets$', 'build\/', 'node_modules\/',
             \ '\.xcodeproj$', '\.xcworkspace$', '\.xib$', '\.git\/', '\.bundle\/', 'vendor\/'], '\|'))
 
 """ ESCキーを2回押すと終了する
