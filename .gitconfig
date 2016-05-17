@@ -34,7 +34,9 @@
     mg = merge
     mc = merge --no-ff --no-commit
 
-    reset-top = reset --hard HEAD~
+    wip = commit -a -m "WIP"
+    remove-top = reset --hard HEAD~
+    reset-top = reset HEAD~
     delete-merged = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
 
     ft = fetch
@@ -46,11 +48,6 @@
 
 # log
     gr = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
-    g1 = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short -10
-    g2 = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short -20
-    g3 = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short -30
-    g4 = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short -40
-    g5 = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short -50
     ls = log --stat --abbrev-commit  # 変更されたファイルも表示
     lp = log -p --abbrev-commit      # diff も表示
 
